@@ -98,6 +98,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.2)
+    kgio (2.11.4)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -110,9 +111,13 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.6.0)
     nio4r (2.5.8)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
@@ -160,6 +165,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rainbow (3.1.1)
+    raindrops (0.20.0)
     rake (13.0.6)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
@@ -224,6 +230,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.5.3)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (1.5.3-x86_64-darwin)
     sqlite3 (1.5.3-x86_64-linux)
     thor (1.2.1)
@@ -234,6 +242,9 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
+    unicorn (5.4.1)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -259,6 +270,7 @@ GEM
     zeitwerk (2.6.1)
 
 PLATFORMS
+  ruby
   x86_64-darwin-21
   x86_64-linux
 
@@ -281,12 +293,13 @@ DEPENDENCIES
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
+  unicorn (= 5.4.1)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.2.3
