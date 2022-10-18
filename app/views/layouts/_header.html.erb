@@ -14,16 +14,24 @@
         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
       </form>
 
-      <div class="dropdown text-end">
-        <%= link_to (image_tag 'icon.png', size: '45x45', class: 'rounded-circle', alt: 'icon'), users_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
-        <ul class="dropdown-menu text-small" style="">
-          <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
-          <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
-          <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
-        </ul>
-      </div>
+      <% if user_signed_in? %>
+        <div class="dropdown text-end">
+          <%= link_to (image_tag 'icon.png', size: '45x45', class: 'rounded-circle', alt: 'icon'), users_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
+          <ul class="dropdown-menu text-small" style="">
+            <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
+            <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
+            <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to "ゲストログイン", new_user_session_path, class: 'btn btn-outline-success' %>
+          <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-secondary' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </header>
