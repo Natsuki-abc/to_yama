@@ -27,9 +27,13 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% unless %w[user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) } %>
+      <%= render 'layouts/header' %>
+    <% end %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    <% unless %w[user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) } %>
+      <%= render 'layouts/footer' %>
+    <% end %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

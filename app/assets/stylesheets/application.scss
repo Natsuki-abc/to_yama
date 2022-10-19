@@ -14,3 +14,12 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+  height: 100vh;
+}
+
+.link_to{
+  text-decoration: none;
+  color: black;
+}
