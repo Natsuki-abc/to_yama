@@ -1,13 +1,13 @@
 <header class="p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <%= link_to (image_tag 'TO_YAMA.png', size: '143x45'), users_path, class: 'd-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none' %>
+      <%= link_to (image_tag 'TO_YAMA.png', size: '143x45'), home_index_path, class: 'd-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none' %>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to "TOP", users_path, class: 'nav-link px-2 link-secondary' %></li>
-        <li><%= link_to "山を探す", users_path, class: 'nav-link px-2 link-dark' %></li>
-        <li><%= link_to "ランキング", users_path, class: 'nav-link px-2 link-dark' %></li>
-        <li><%= link_to "ルーム登録", users_path, class: 'nav-link px-2 link-dark' %></li>
+        <li><%= link_to "TOP", home_index_path, class: 'nav-link px-2 link-secondary' %></li>
+        <li><%= link_to "山を探す", home_index_path, class: 'nav-link px-2 link-dark' %></li>
+        <li><%= link_to "ランキング", home_index_path, class: 'nav-link px-2 link-dark' %></li>
+        <li><%= link_to "ルーム登録", home_index_path, class: 'nav-link px-2 link-dark' %></li>
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -16,11 +16,15 @@
 
       <% if user_signed_in? %>
         <div class="dropdown text-end">
-          <%= link_to (image_tag 'icon.png', size: '45x45', class: 'rounded-circle', alt: 'icon'), users_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
+          <% if current_user.icon? %>
+            <%= image_tag current_user.icon.thumb.url, :size => '45x45' %>
+          <% else %>
+            <%= link_to (image_tag 'icon.png', size: '45x45', class: 'rounded-circle', alt: 'icon'), users_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
+          <% end %>
           <ul class="dropdown-menu text-small" style="">
             <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
             <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
-            <li><%= link_to "設定", users_path(current_user), class: 'dropdown-item' %></li>
+            <li><%= link_to "気になる山", users_path(current_user), class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
           </ul>
