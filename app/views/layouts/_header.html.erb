@@ -17,12 +17,12 @@
       <% if user_signed_in? %>
         <div class="dropdown text-end">
           <% if current_user.icon? %>
-            <%= image_tag current_user.icon.thumb.url, :size => '45x45' %>
+            <%= image_tag current_user.icon.thumb.url, size: '45x45', alt: 'icon' %>
           <% else %>
             <%= link_to (image_tag 'icon.png', size: '45x45', class: 'rounded-circle', alt: 'icon'), home_index_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
           <% end %>
           <ul class="dropdown-menu text-small" style="">
-            <li><%= link_to "設定", user_session_path(current_user), class: 'dropdown-item' %></li>
+            <li><%= link_to "アカウント編集", edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
             <li><%= link_to "口コミ履歴", user_session_path(current_user), class: 'dropdown-item' %></li>
             <li><%= link_to "気になる山", user_session_path(current_user), class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider"></li>
@@ -31,7 +31,7 @@
         </div>
       <% else %>
         <div>
-          <%= link_to "ゲストログイン", home_guest_sign_in_path, method: :post, class: 'btn btn-outline-success' %>
+          <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-success' %>
           <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-secondary' %>
           <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary' %>
         </div>
