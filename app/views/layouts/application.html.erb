@@ -28,6 +28,9 @@
   <body>
     <%= render 'layouts/header' %>
     <main>
+      <% if flash.now[:notice] %>
+        <p class="notice"><%= flash.now[:notice] %></p>
+      <% end %>
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
