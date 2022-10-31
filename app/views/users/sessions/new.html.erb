@@ -1,9 +1,5 @@
 <%= content_for(:title, 'ログイン') %>
 
-<% if flash.now[:notice] %>
-  <p class="notice"><%= flash.now[:notice] %></p>
-<% end %>
-
 <div class='text-center login_body'>
   <%= render 'users/shared/logo_link' %>
   <div class="login container">
@@ -12,6 +8,11 @@
         <div id="login-box" class="col-md-12">
           <h3 class='h3 mb-3 login-font'>ログイン</h3>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class='login_alert'>
+              <% flash.each do |key, value| %>
+                <%= content_tag :div, value, class: key %>
+              <% end %>
+            </div>
             <div class='mb-3'>
               <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
