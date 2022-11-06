@@ -7,6 +7,23 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      mountain: 山
+    attributes: 
+      mountain:
+        id: ID
+        mountain_name: 山の名前
+        address: 所在地
+        time: 所要時間
+        elevation: 標高
+        difficulty: 難易度
+        station: 最寄駅
+        season: 最適な季節
+        parking: 駐車場情報
+        distance: 歩行距離
+        yama_image: 山の画像
+        created_at: 作成日
+        updated_at: 更新日
   date:
     abbr_day_names:
     - 日
