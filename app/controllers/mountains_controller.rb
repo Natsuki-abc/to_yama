@@ -23,11 +23,13 @@ class MountainsController < ApplicationController
   def destroy
   end
 
-  def order_params
+  private
+
+  def mountain_params
     params.require(:mountain).permit(:mountain_name, :address, :time, :elevation, :difficulty, :station, :parking, :distance, season: [])
   end
 
   def season_string
     params[:mountain][:season] = params[:mountain][:season].join(“,”)
-    end
+  end
 end
