@@ -1,0 +1,24 @@
+// Place all the styles related to the mountains controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+table , td, th {
+	border: none;
+	border-collapse: collapse;
+}
+
+th {
+	padding: 3px;
+	width: 60px;
+	height: 25px;
+}
+
+td{
+  padding: 3px;
+	width: 70px;
+	height: 25px;
+}
+
+.new_mountain{
+  margin: 50px;
+}

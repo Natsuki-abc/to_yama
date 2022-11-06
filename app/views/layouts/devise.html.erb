@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= full_title(yield(:title)) %></title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- 後ほど設定 -->
+    <meta name="twitter:card" content="カード種類" /> <!--①-->
+    <meta name="twitter:site" content="@ユーザー名" /> <!--②-->
+    <meta property="og:url" content="記事のURL" /> <!--③-->
+    <meta property="og:title" content="記事のタイトル" /> <!--④-->
+    <meta property="og:description" content="記事の要約（ディスクリプション）" /> <!--⑤-->
+    <meta property="og:image" content="画像のURL" /> <!--⑥-->
+
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag ('apple-touch-icon-180x180.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' %>
+    <%= favicon_link_tag ('android-touch-icon-192x192.png'), rel: 'android-touch-icon', sizes: '192x192', type: 'image/png' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': false %>
+  </body>
+</html>

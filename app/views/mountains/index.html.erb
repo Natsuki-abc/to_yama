@@ -1,0 +1,93 @@
+<%= content_for(:title, '山を探す') %>
+
+<%= link_to "山の新規登録", new_mountain_path %>
+
+<div>
+  <h1>都道府県一覧から探す</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th><%= link_to "北海道" %></th>
+        <td>北海道</td>
+      </tr>
+      <tr>
+        <th>東北</th>
+        <td>青森</td>
+        <td>岩手</td>
+        <td>秋田</td>
+        <td>宮城</td>
+        <td>山形</td>
+        <td>福島</td>
+      </tr>
+      <tr>
+        <th>関東</th>
+        <td>茨城</td>
+        <td>栃木</td>
+        <td>群馬</td>
+        <td>埼玉</td>
+        <td>千葉</td>
+        <td>東京</td>
+        <td>神奈川</td>
+      </tr>
+      <tr>
+        <th>甲信越</th>
+        <td>新潟</td>
+        <td>長野</td>
+        <td>山梨</td>
+      </tr>
+      <tr>
+        <th>東海</th>
+        <td>静岡</td>
+        <td>愛知</td>
+        <td>岐阜</td>
+      </tr>
+      <tr>
+        <th>北陸</th>
+        <td>富山</td>
+        <td>石川</td>
+        <td>福井</td>
+      </tr>
+      <tr>
+        <th>近畿</th>
+        <td>三重</td>
+        <td>滋賀</td>
+        <td>奈良</td>
+        <td>京都</td>
+        <td>大阪</td>
+        <td>和歌山</td>
+        <td>兵庫</td>
+      </tr>
+      <tr>
+        <th>中国</th>
+        <td>鳥取</td>
+        <td>岡山</td>
+        <td>島根</td>
+        <td>広島</td>
+        <td>山口</td>
+      </tr>
+      <tr>
+        <th>四国</th>
+        <td>香川</td>
+        <td>徳島</td>
+        <td>愛媛</td>
+        <td>高知</td>
+      </tr>
+      <tr>
+        <th>九州</th>
+        <td>福岡</td>
+        <td>長崎</td>
+        <td>佐賀</td>
+        <td>大分</td>
+        <td>熊本</td>
+        <td>宮崎</td>
+        <td>鹿児島</td>
+      </tr>
+      <tr>
+        <th>沖縄</th>
+        <td>沖縄</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <%= image_tag 'japan_map.png' %>
+</div>

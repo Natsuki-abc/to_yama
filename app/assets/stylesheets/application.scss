@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min.css
+ *= require_self
+ *= require_tree .
+ */
+
+header{
+  position: fixed;
+  width: 100%;
+  background-color: white;
+}
+
+main{
+  padding-top: 78px;
+}
+
+@media screen and (min-width:992px) and (max-width:1200px){
+  main{padding-top: 116px;}
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+  main{padding-top: 218px;}
+}
+
+@media screen and (min-width:460px) and (max-width:767px){
+  main{padding-top: 226px;}
+}
+
+@media screen and (min-width:375px) and (max-width:459px){
+  main{padding-top: 264px;}
+}
+
+@media screen and (max-width:374px){
+  main{padding-top: 304px;}
+}
+
+.link_to{
+  text-decoration: none;
+  color: rgba(4, 16, 247, 0.89);
+}
+
+.required:after { 
+  content: " *";
+  color: red;
+}
+
+.notice{
+  width: 100%;
+  background-color: rgb(250, 238, 152);
+  padding: 8px 0;
+  margin-bottom: 0;
+}
+
+.error__messages{
+  font-size: 14px;
+  color: red;
+  padding-bottom: 10px;
+  list-style: none;
+}
+
+.login_alert{
+  font-weight: bold;
+  color: red;
+}

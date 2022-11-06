@@ -1,0 +1,29 @@
+<%= content_for(:title, 'パスワード再設定') %>
+
+<% if flash.now[:notice] %>
+  <p class="notice"><%= flash.now[:notice] %></p>
+<% end %>
+
+<div class='text-center login_body'>
+  <%= render 'users/shared/logo_link' %>
+  <div class="login container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+      <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+          <h3 class='h3 mb-3 login-font'>パスワード再設定</h3>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
+            <div class='mb-3'>
+              <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true, autocomplete: "email", class: 'form-control' %>
+            </div>
+            <div class='actions'>
+              <%= f.submit "送信", class: "w-100 btn btn-lg btn-secondary" %>
+            </div>
+          <% end %>
+          <p>ログインは<%= link_to "こちら", new_user_session_path, class: 'link_to' %></p>
+          <p>アカウントの新規登録は<%= link_to "こちら", new_user_registration_path, class: 'link_to' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

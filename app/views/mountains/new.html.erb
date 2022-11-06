@@ -1,0 +1,59 @@
+<%= content_for(:title, '新規山追加') %>
+
+<div class='new_mountain'>
+  <h1>新しい山を追加</h1>
+
+  <p style='color:red'>*は必須項目です。</p>
+
+  <%= form_with model:@mountain do |f| %>
+    <div class=''>
+      <%= image_tag @mountain.yama_image.url if @mountain.yama_image? %>
+    </div>
+    <div class="mb-3 row">
+      <%= f.label :yama_image, "山の画像", class: 'col-sm-2 col-form-label required' %>
+      <%= f.file_field :yama_image, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :mountain_name, "山の名前", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_field :mountain_name, :placeholder => "例）富士山（吉田ルート）", autofocus: true, autocomplete: "name", class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :address, "所在地", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_field :address, :placeholder => "例）山梨県", autofocus: true, autocomplete: "address-level1", class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :time, "所要時間", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_field :time, :placeholder => "例）○時間○○分", autofocus: true, class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :elevation, "標高", class: 'col-sm-2 col-form-label required' %>
+      <%= f.number_field :elevation, step: '0.1', :placeholder => "例）3776", autofocus: true, class: 'form-control' %>m
+    </div>
+
+<!-- 星での評価実装する -->
+    <div class='mb-3 row'>
+      <%= f.label :difficulty, "難易度", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_field :difficulty, :placeholder => "例）富士山", autofocus: true, autocomplete: "name", class: 'form-control' %>
+    </div>
+
+    <div class='mb-3 row'>
+      <%= f.label :station, "最寄駅", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_field :station, :placeholder => "例）富士山駅、河口湖駅等からバス", autofocus: true, class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :season, "最適な季節", class: 'form-check-label required' %>
+      <% ["春","夏","秋","冬"].each do |s| %>
+        <%= f.check_box :season, {multiple: true, class: 'form-check-input'}, s, nil %><%= s %>
+      <% end %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :parking, "駐車場情報", class: 'col-sm-2 col-form-label required' %>
+      <%= f.text_area :parking, :placeholder => "例）吉田口5号目に無料駐車場有（夏季はマイカー規制のため利用不可）", autofocus: true, class: 'form-control' %>
+    </div>
+    <div class='mb-3 row'>
+      <%= f.label :distance, "歩行距離", class: 'col-sm-2 col-form-label required' %>
+      <%= f.number_field :distance, step: '0.1', :placeholder => "例）15", autofocus: true, class: 'form-control' %>km
+    </div>
+    <%= f.submit "山を追加する", class: "w-100 btn btn-lg btn-secondary" %>
+  <% end %>
+</div>
