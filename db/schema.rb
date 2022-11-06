@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_20_123122) do
+ActiveRecord::Schema.define(version: 2022_11_05_074446) do
+
+  create_table "mountains", force: :cascade do |t|
+    t.string "mountain_name"
+    t.string "address"
+    t.string "time"
+    t.integer "elevation"
+    t.float "difficulty"
+    t.string "station"
+    t.string "season"
+    t.string "parking"
+    t.integer "distance"
+    t.string "yama_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
