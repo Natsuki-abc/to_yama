@@ -5,7 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.6
+
+* Rails version 6.1.7
 
 * System dependencies
 
@@ -22,3 +24,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+To＿YAMA 機能
+・ゲストログイン機能追加
+・山の新規登録・編集は一部のユーザーしかできない
