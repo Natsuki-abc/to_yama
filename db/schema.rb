@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_073828) do
+ActiveRecord::Schema.define(version: 2022_11_11_092308) do
 
   create_table "mountains", force: :cascade do |t|
     t.string "mountain_name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_11_11_073828) do
     t.string "season"
     t.text "parking"
     t.integer "distance"
-    t.string "yama_image"
+    t.string "mountain_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

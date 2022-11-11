@@ -7,11 +7,11 @@
 
   <%= form_with model:@mountain do |f| %>
     <div class=''>
-      <%= image_tag @mountain.yama_image.url if @mountain.yama_image? %>
+      <%= image_tag @mountain.mountain_image.url if @mountain.mountain_image? %>
     </div>
     <div class="mb-3 row">
-      <%= f.label :yama_image, "山の画像", class: 'col-sm-2 col-form-label required' %>
-      <%= f.file_field :yama_image, autofocus: true, class: 'form-control' %>
+      <%= f.label :mountain_image, "山の画像", class: 'col-sm-2 col-form-label required' %>
+      <%= f.file_field :mountain_image, autofocus: true, class: 'form-control' %>
     </div>
     <div class='mb-3 row'>
       <%= f.label :mountain_name, "山の名前", class: 'col-sm-2 col-form-label required' %>
