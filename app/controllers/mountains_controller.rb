@@ -1,5 +1,6 @@
 class MountainsController < ApplicationController
   before_action :season_string, only: [:create, :update] 
+  before_action :set_q, only: [:index, :search]
 
   def index
   end
@@ -23,6 +24,10 @@ class MountainsController < ApplicationController
   def destroy
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
 
   def mountain_params
@@ -31,5 +36,9 @@ class MountainsController < ApplicationController
 
   def season_string
     params[:mountain][:season] = params[:mountain][:season].join(“,”)
+  end
+
+  def set_q
+    @q = Mountain.ransack(params[:q])
   end
 end
