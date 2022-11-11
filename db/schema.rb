@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_014807) do
+ActiveRecord::Schema.define(version: 2022_11_11_073828) do
 
   create_table "mountains", force: :cascade do |t|
     t.string "mountain_name"
     t.string "address"
     t.string "time"
     t.integer "elevation"
-    t.float "difficulty"
+    t.integer "difficulty"
     t.string "station"
     t.string "season"
-    t.string "parking"
+    t.text "parking"
     t.integer "distance"
     t.string "yama_image"
     t.datetime "created_at", precision: 6, null: false

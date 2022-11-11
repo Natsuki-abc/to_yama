@@ -1,17 +1,12 @@
 <h1>Mountains#show</h1>
 <p>Find me in app/views/mountains/show.html.erb</p>
 
-<div id="star-rate<%= @mountain.id%>">
-  <script>
-    $('#star-rate<%= @mountain.id %>').empty();
-    $('#star-rate<%= @mountain.id%>').raty({
-        size      : 36,
-        starOff   : '<%= asset_path('star-off.png') %>',
-        starOn    : '<%= asset_path('star-on.png') %>',
-        starHalf  : '<%= asset_path('star-half.png') %>',
-        half: true,
-        readOnly: true,
-        score: <%= @mountain.difficulty %>
-      });
-  </script>
-</div>
+<% @mountain.each do |m| %>
+  <div class="star">
+    <% if m.difficulty? %>
+      <% for i in 1..m.difficulty do %>
+        ★
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

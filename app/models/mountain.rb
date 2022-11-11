@@ -7,5 +7,5 @@ class Mountain < ApplicationRecord
   validates :station, presence: true
   validates :season, presence: true
   validates :parking, presence: true
-  validates :distance, presence: true, numericality: truezs  
+  validates :distance, presence: true, numericality: true
 end
