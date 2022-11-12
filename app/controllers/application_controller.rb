@@ -5,13 +5,17 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :icon])
   end
 
   def after_sign_in_path_for(resource)
-    user_path
+    if current_user
+      flash[:notice] = "ログインに成功しました"
+      root_path
+    end
   end
 
   def after_sign_out_path_for(resource)
-    new_user_session_path
+    root_path
   end
 end

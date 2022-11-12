@@ -45,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -58,10 +58,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
+    flash[:notice] = '新規登録完了しました'
     root_path
   end
 
-  def after_inactive_sign_up_path_for(resource)
-    new_user_registration_path
+  def after_update_path_for(resource)
+    user_path(resource)
   end
+
+  # 認証が必要なユーザーの登録完了後の遷移先
+  # def after_inactive_sign_up_path_for(resource)
+  #   new_user_registration_path
+  # end
 end
