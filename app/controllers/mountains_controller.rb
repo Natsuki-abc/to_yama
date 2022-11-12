@@ -26,6 +26,7 @@ class MountainsController < ApplicationController
 
   def search
     @results = @q.result
+    @search_word = @q.address_cont
   end
 
   private

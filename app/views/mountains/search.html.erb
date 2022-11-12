@@ -1,17 +1,17 @@
 <div class="search"> 
-  <h1><%= @results.address %></h1>
+  <h1><%= @search_word %>の山一覧</h1>
   <p><%= @results.count %>件</p>
   <div class="search_base" >
     <% @results.each do |results| %>
-      <div class = "search_index_view" >
+      <div class="search_index_view">
         <%= link_to results do %>
           <div class = "search_room_img" >
-            <%= image_tag results.room_image_url(:thumb ) if results.room_image.present? %>
+            <%= image_tag results.mountain_image_url(:thumb) if results.mountain_image.present? %>
           </div>
-          <div class = "search_room" >
-            <h2 class = "search_room_name" ><%= results.room_name %></h2>
+          <div class="search_room">
+            <h2 class="search_room_name"><%= results.mountain_name %></h2>
             <%= results.address %>
-            <p class = "search_price" >￥<%= results.price %></p>
+            <p class="search_price"><%= results.difficulty %></p>
           </div>
         <% end %>
       </div>

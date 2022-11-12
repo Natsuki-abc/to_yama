@@ -8,14 +8,14 @@ table , td, th {
 }
 
 th {
-	padding: 3px;
+	padding: 15px 3px;
 	width: 60px;
 	height: 25px;
 }
 
 td{
-  padding: 3px;
-	width: 70px;
+  padding: 15px 3px;
+	width: 55px;
 	height: 25px;
 }
 
@@ -44,8 +44,33 @@ td{
   color: rgb(255, 145, 0);
 }
 
-// 一覧表示ページ
+//index
+.mountain_index{
+  padding: 10px 40px;
+}
+
+.area{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.area_map{
+  width: 50%;
+}
+
+// show
 .star{
 font-size: 50px;
 color: rgb(255, 145, 0);
+}
+
+//検索関係
+.mountain_link{
+  text-decoration: none;
+  color: black;
+}
+
+.mountain_link:hover{
+  color: gray;
 }
