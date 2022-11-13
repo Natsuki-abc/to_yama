@@ -69,3 +69,4 @@ end
 
 gem 'ransack'
 gem 'cancancan'
+gem 'rails_admin', '~> 3.0'
