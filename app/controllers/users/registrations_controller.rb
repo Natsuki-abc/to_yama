@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    user_path(resource)
+    user_path(current_user)
   end
 
   # 認証が必要なユーザーの登録完了後の遷移先
