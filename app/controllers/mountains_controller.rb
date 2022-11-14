@@ -32,7 +32,7 @@ class MountainsController < ApplicationController
   private
 
   def mountain_params
-    params.require(:mountain).permit(:mountain_name, :address, :time, :elevation, :difficulty, :station, :parking, :distance, season: [])
+    params.require(:mountain).permit(:mountain_name, :address, :time, :elevation, :difficulty, :station, :parking, :distance, :mountain_image, season: [])
   end
 
   def season_string

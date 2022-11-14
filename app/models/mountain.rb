@@ -1,4 +1,6 @@
 class Mountain < ApplicationRecord
+  mount_uploader :mountain_image, MountainImageUploader
+
   validates :mountain_name, presence: true, length: { maximum: 50 }
   validates :address, presence: true, uniqueness: true
   validates :time, presence: true
