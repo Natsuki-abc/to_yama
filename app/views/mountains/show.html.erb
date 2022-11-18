@@ -1,12 +1,30 @@
-<h1>Mountains#show</h1>
-<p>Find me in app/views/mountains/show.html.erb</p>
+<div class='' >
+  <% if @mountain.mountain_image.present? %>
+    <%= image_tag @mountain.mountain_image.url, class: 'mountain_img' %>
+  <% else %>
+    <%= image_tag "/assets/room.jpg", class: "room_img" %>
+  <% end %>
+  
+  <div class='mountain_content'>
+    <p><%= @mountain.mountain_name %></p>
+    <p>総歩行時間：<%= @mountain.time %></p>
+    <p>標高：<%= @mountain.elevation %>m</p>
 
-<% @mountain.each do |m| %>
-  <div class="star">
-    <% if m.difficulty? %>
-      <% for i in 1..m.difficulty do %>
-        ★
+    難易度：
+    <div class="star">
+      <% if @mountain.difficulty? %>
+        <% for i in 1..@mountain.difficulty do %>
+          ★
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+    <p>最寄駅：<%= @mountain.station %></p>
+    <p>最適シーズン：<%= @mountain.season %></p>
+    <p>駐車場情報：<%= @mountain.parking %></p>
+    <p>歩行距離：<%= @mountain.distance %>km</p>
   </div>
-<% end %>
+
+  <div class='google_map'>
+  </div>
+</div>

@@ -6,12 +6,18 @@
       <div class="search_index_view">
         <%= link_to results do %>
           <div class = "search_room_img" >
-            <%= image_tag results.mountain_image_url(:thumb) if results.mountain_image.present? %>
+            <%= image_tag results.mountain_image_url if results.mountain_image.present? %>
           </div>
           <div class="search_room">
             <h2 class="search_room_name"><%= results.mountain_name %></h2>
             <%= results.address %>
-            <p class="search_price"><%= results.difficulty %></p>
+            <div class="star">
+              <% if results.difficulty? %>
+                <% for i in 1..results.difficulty do %>
+                  ★
+                <% end %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
