@@ -10,4 +10,5 @@ class Mountain < ApplicationRecord
   validates :season, presence: true
   validates :parking, presence: true
   validates :distance, presence: true, numericality: true
+  validates :furigana, presence: true
 end

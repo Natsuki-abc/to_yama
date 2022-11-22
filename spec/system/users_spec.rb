@@ -26,7 +26,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   end
 
   context '新規登録できない場合' do
-    it '必須情報が1つでも入力されていなければ、新規登録できず、新規登録ページへ戻ること' do
+    it '必須情報が入力されていなければ、新規登録できず、新規登録ページへ戻ること' do
       expect{
         visit new_user_registration_path
         fill_in 'user[name]', with: ''
