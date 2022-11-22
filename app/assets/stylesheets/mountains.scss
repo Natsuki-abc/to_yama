@@ -82,3 +82,32 @@ color: rgb(255, 145, 0);
 .mountain_link:hover{
   color: gray;
 }
+
+.search{
+  padding: 10px 20px 0 20px;
+}
+
+.search_index{
+  padding-top: 15px;
+}
+
+.search_content{
+  display: flex;
+  margin: 0 20px;
+  padding-top: 20px;
+}
+
+.search_mountain_img{
+  width: 260px;
+  height: 195px;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
+.mountain_name{
+  font-weight: bold;
+}
+
+.search_star{
+  font-size: 20px;
+}
