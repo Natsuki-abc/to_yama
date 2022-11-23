@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :home, only: [:index, :new]
-  resources :mountains do
+  resources :mountains, only: [:index, :new] do
     collection do
       get 'search'
     end

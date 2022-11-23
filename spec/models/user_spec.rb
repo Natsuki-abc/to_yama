@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  content "user新規登録が有効である場合" do
+  context "user新規登録が有効である場合" do
     it "名前、メールアドレス、パスワードが入力されている場合、有効であること" do
       expect(FactoryBot.create(:user)).to be_valid
     end
