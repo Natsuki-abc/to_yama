@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_22_112750) do
+ActiveRecord::Schema.define(version: 2022_11_23_120232) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "mountain_id"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "mountains", force: :cascade do |t|
     t.string "mountain_name"
