@@ -7,11 +7,11 @@
 
   <%= form_with model:@mountain do |f| %>
     <div class=''>
-      <%= image_tag @mountain.yama_image.url if @mountain.yama_image? %>
+      <%= image_tag @mountain.mountain_image.url if @mountain.mountain_image? %>
     </div>
     <div class="mb-3 row">
-      <%= f.label :yama_image, "山の画像", class: 'col-sm-2 col-form-label required' %>
-      <%= f.file_field :yama_image, autofocus: true, class: 'form-control' %>
+      <%= f.label :mountain_image, "山の画像", class: 'col-sm-2 col-form-label required' %>
+      <%= f.file_field :mountain_image, autofocus: true, class: 'form-control' %>
     </div>
     <div class='mb-3 row'>
       <%= f.label :mountain_name, "山の名前", class: 'col-sm-2 col-form-label required' %>
@@ -29,13 +29,21 @@
       <%= f.label :elevation, "標高", class: 'col-sm-2 col-form-label required' %>
       <%= f.number_field :elevation, step: '0.1', :placeholder => "例）3776", autofocus: true, class: 'form-control' %>m
     </div>
-
-<!-- 星での評価実装する -->
     <div class='mb-3 row'>
       <%= f.label :difficulty, "難易度", class: 'col-sm-2 col-form-label required' %>
-      <%= f.text_field :difficulty, :placeholder => "例）富士山", autofocus: true, autocomplete: "name", class: 'form-control' %>
+      <div class="star-field">
+        <input id="star5" type="radio" name='mountain[difficulty]' value="5" />
+        <label for="star5">★</label>
+        <input id="star4" type="radio" name='mountain[difficulty]' value="4" />
+        <label for="star4">★</label>
+        <input id="star3" type="radio" name='mountain[difficulty]' value="3" />
+        <label for="star3">★</label>
+        <input id="star2" type="radio" name='mountain[difficulty]' value="2" />
+        <label for="star2">★</label>
+        <input id="star1" type="radio" name='mountain[difficulty]' value="1" />
+        <label for="star1">★</label>
+      </div>
     </div>
-
     <div class='mb-3 row'>
       <%= f.label :station, "最寄駅", class: 'col-sm-2 col-form-label required' %>
       <%= f.text_field :station, :placeholder => "例）富士山駅、河口湖駅等からバス", autofocus: true, class: 'form-control' %>

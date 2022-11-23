@@ -14,5 +14,3 @@ ActiveStorage.start()
 
 import "bootstrap"
 import "../stylesheets/application"
-
-window.$ = window.jQuery = require('jquery');

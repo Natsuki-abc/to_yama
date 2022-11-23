@@ -66,3 +66,8 @@ gem 'devise-i18n'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'ransack'
+gem 'cancancan'
+gem 'rails_admin', '~> 3.0'
+gem 'carrierwave', '~> 2.0'

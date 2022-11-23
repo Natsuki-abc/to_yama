@@ -21,6 +21,10 @@ header{
   background-color: white;
 }
 
+.header_ul{
+  padding-left: 20px !important;
+}
+
 main{
   padding-top: 78px;
 }
@@ -43,6 +47,10 @@ main{
 
 @media screen and (max-width:374px){
   main{padding-top: 304px;}
+}
+
+li{
+  list-style: none;
 }
 
 .link_to{
