@@ -9,5 +9,6 @@ FactoryBot.define do
     season { Faker::String.random(length: 3..10) }
     parking { Faker::String.random(length: 10..20) }
     distance { Faker::Number.number(digits: 2) }
+    furigana { Faker::Lorem.words(number: 5) }
   end
 end
