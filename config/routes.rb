@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'comments/index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :comments
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
