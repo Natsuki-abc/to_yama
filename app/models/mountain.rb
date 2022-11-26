@@ -12,5 +12,5 @@ class Mountain < ApplicationRecord
   validates :distance, presence: true, numericality: true
   validates :furigana, presence: true
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

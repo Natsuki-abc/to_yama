@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :home, only: [:index, :new]
-  resources :mountains, only: [:index, :new] do
+  resources :mountains, only: [:index, :new, :show] do
     collection do
       get 'search'
     end
+    resources :comments, only: [:create]
   end
-  resources :comments
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'

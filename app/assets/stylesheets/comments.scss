@@ -1,3 +1,18 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+//mountain#show
+.mountain_comment{
+  margin: 20px;
+  padding: 30px;
+  background-color: rgb(158, 221, 177);
+  border-radius: 10px;
+}
+
+.comment_new{
+  margin: 0 20px;
+  padding: 40px;
+  background-color: rgb(215, 254, 199);
+  border-radius: 10px;
+}

@@ -26,9 +26,34 @@
   </div>
 
   <div class='google_map'>
+    <p>所在地</p>
   </div>
 
   <div class='mountain_comment'>
-    <p>口コミ一覧</p>
+    <h4>口コミ一覧</h4>
+    <%= @comments.each do |comments| %>
+      <li>
+        <%=  %>
+        <%= comments.title %>
+        <%= comments.content %>
+      </li>
+    <% end %>
+
+    <div class='comment_new'>
+      <h4>口コミを投稿する</h4>
+      <%= form_with model:[@mountain, @comment] do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :mountain_id, value: @mountain.id %>
+        <div class='mb-3 row'>
+          <%= f.label :title, "タイトル", class: 'col-sm-2 col-form-label required' %>
+          <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class='mb-3 row'>
+          <%= f.label :content, "口コミ内容", class: 'col-sm-2 col-form-label required' %>
+          <%= f.text_field :content, autofocus: true, class: 'form-control' %>
+        </div>
+        <%= f.submit "口コミを投稿する", class: 'w-100 btn btn-lg btn-secondary' %>
+      <% end %>
+    </div>
   </div>
 </div>

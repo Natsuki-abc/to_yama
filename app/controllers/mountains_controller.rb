@@ -7,6 +7,8 @@ class MountainsController < ApplicationController
 
   def show
     @mountain = Mountain.find(params[:id])
+    @comments = @mountain.comments
+    @comment = current_user.comments.new
   end
 
   def search
