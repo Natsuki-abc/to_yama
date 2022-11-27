@@ -1,3 +1,5 @@
+<%= content_for(:title, @mountain.mountain_name) %>
+
 <div class='' >
   <% if @mountain.mountain_image.present? %>
     <%= image_tag @mountain.mountain_image.url, class: 'mountain_img' %>
@@ -31,11 +33,10 @@
 
   <div class='mountain_comment'>
     <h4>口コミ一覧</h4>
-    <%= @comments.each do |comments| %>
+    <% @comments.each do |comments| %>
       <li>
-        <%=  %>
-        <%= comments.title %>
-        <%= comments.content %>
+        <p>タイトル：<%= comments.title %></p>
+        <p>内容：<%= comments.content %></p>
       </li>
     <% end %>
 
