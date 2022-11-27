@@ -1,12 +1,14 @@
 <%= content_for(:title, "口コミ履歴") %>
 
-<div class=''>
+<div class='comment_index'>
   <h1><%= current_user.name %>さんの口コミ履歴</h1>
-  <% @comments.each do |comments| %>
-    <li>
-      <p>山の名前：<%= comments.mountain.mountain_name %></p>
-      <p>タイトル：<%= comments.title %></p>
-      <p>内容：<%= comments.content %></p>
-    </li>
-  <% end %>
+  <div class='comment_list'>
+    <% @comments.each do |comments| %>
+      <li>
+        <p>山の名前：<%= comments.mountain.mountain_name %></p>
+        <p>タイトル：<%= comments.title %></p>
+        <p>内容：<%= comments.content %></p>
+      </li>
+    <% end %>
+  </div>
 </div>
