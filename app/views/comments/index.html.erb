@@ -5,7 +5,7 @@
   <div class='comment_list'>
     <% @comments.each do |comments| %>
       <li>
-        <p>山の名前：<%= comments.mountain.mountain_name %></p>
+        <p>山の名前：<%= link_to comments.mountain.mountain_name, mountain_path(comments.mountain_id), class: 'comment_link' %></p>
         <p>タイトル：<%= comments.title %></p>
         <p>内容：<%= comments.content %></p>
       </li>

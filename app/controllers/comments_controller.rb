@@ -8,12 +8,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
+    @mountain = @comment.mountain_id
     if @comment.save
       flash[:notice] = "新規口コミを投稿しました"
-      redirect_to controller: :mountains, action: :show, id: @comment.mountain_id
+      redirect_to mountain_path(@mountain)
     else
-      flash.now[:notice] = "口コミの投稿に失敗しました"
-      render mountain_path(@comment.mountain_id)
+      flash[:notice] = "口コミの投稿に失敗しました"
+      redirect_to mountain_path(@mountain)
     end
   end
 
