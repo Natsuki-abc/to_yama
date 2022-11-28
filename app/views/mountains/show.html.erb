@@ -32,16 +32,18 @@
   </div>
 
   <div class='mountain_comment'>
-    <h4>口コミ一覧</h4>
+    <h4 class='comment_font'>口コミ一覧</h4>
     <% @comments.each do |comments| %>
-      <li>
-        <p>タイトル：<%= comments.title %></p>
-        <p>内容：<%= comments.content %></p>
-      </li>
+      <div class='comments'>
+        <li>
+          <p>タイトル：<%= comments.title %></p>
+          <p class='content'>内容：<%= comments.content %></p>
+        </li>
+      </div>
     <% end %>
 
     <div class='comment_new'>
-      <h4>口コミを投稿する</h4>
+      <h4 class='comment_font'>口コミを投稿する</h4>
       <%= form_with model:[@mountain, @comment] do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :mountain_id, value: @mountain.id %>
