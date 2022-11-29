@@ -13,7 +13,11 @@ class MountainsController < ApplicationController
 
   def search
     @results = @q.result
-    @search_word = @q.address_cont
+    if @q.address_cont.present?
+      @search_word = @q.address_cont
+    else
+      @search_word = @q.area_cont
+    end
   end
 
   private
