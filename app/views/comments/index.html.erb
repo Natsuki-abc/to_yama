@@ -2,13 +2,13 @@
 
 <div class='comment_index'>
   <h1><%= current_user.name %>さんの口コミ履歴</h1>
-  <div class='comment_list'>
-    <% @comments.each do |comments| %>
+  <% @comments.each do |comments| %>
+    <div class='comment_list'>
       <li>
         <p>山の名前：<%= link_to comments.mountain.mountain_name, mountain_path(comments.mountain_id), class: 'comment_link' %></p>
         <p>タイトル：<%= comments.title %></p>
         <p>内容：<%= comments.content %></p>
       </li>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
