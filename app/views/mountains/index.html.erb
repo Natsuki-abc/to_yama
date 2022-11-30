@@ -91,8 +91,20 @@
         </tbody>
       </table>
     </div>
+
     <div class='area_map'>
-      <%= image_tag 'japan_map.png', width: '100%' %>
+      <%= image_tag 'japan_map.png', width: '100%', class: '' %>
+      <%= link_to "北海道", search_mountains_path(q:{area_cont:"北海道"}), class: 'area_link hokkaido' %>
+      <%= link_to "東北", search_mountains_path(q:{area_cont:"東北"}), class: 'area_link tohoku' %>
+      <%= link_to "関東", search_mountains_path(q:{area_cont:"関東"}), class: 'area_link kanto' %>
+      <%= link_to "甲信越", search_mountains_path(q:{area_cont:"甲信越"}), class: 'area_link koshinetsu' %>
+      <%= link_to "東海", search_mountains_path(q:{area_cont:"東海"}), class: 'area_link tokai' %>
+      <%= link_to "北陸", search_mountains_path(q:{area_cont:"北陸"}), class: 'area_link hokuriku' %>
+      <%= link_to "近畿", search_mountains_path(q:{area_cont:"近畿"}), class: 'area_link kinki' %>
+      <%= link_to "中国", search_mountains_path(q:{area_cont:"中国"}), class: 'area_link tyugoku' %>
+      <%= link_to "四国", search_mountains_path(q:{area_cont:"四国"}), class: 'area_link shikoku' %>
+      <%= link_to "九州", search_mountains_path(q:{area_cont:"九州"}), class: 'area_link kyusyu' %>
+      <%= link_to "沖縄", search_mountains_path(q:{area_cont:"沖縄"}), class: 'area_link okinawa' %>
     </div>
   </div>
 </div>
