@@ -3,6 +3,14 @@
 <%= link_to "山の新規登録", new_mountain_path %>
 
 <div class='mountain_index'>
+  <div class='free_word'>
+    <%= search_form_for @q, url: search_mountains_path do |f| %>
+      <%= f.search_field :mountain_name_or_address_or_elevation_or_station_or_season_or_parking_or_distance_or_area_or_furigana_cont, class: 'form-control search_keyword', placeholder: "キーワードで検索" %>
+    <% end %>
+  </div>
+
+  <hr class='featurette-divider'>
+
   <h1>都道府県一覧から探す</h1>
   <div class='area'>
     <div class='area_table'>

@@ -45,11 +45,20 @@ td{
 }
 
 //index
-.mountain_index{
+div.mountain_index{
   padding: 10px 40px;
 }
 
-.area{
+.free_word{
+  margin: 20px;
+}
+
+.search_keyword{
+  width: 50% !important;
+  margin: auto;
+}
+
+div.area{
   padding-top: 20px;
   display: flex;
   justify-content: center;
