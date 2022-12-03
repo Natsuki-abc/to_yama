@@ -18,7 +18,7 @@ class MountainsController < ApplicationController
     elsif @q.area_cont.present? 
       @search_word = @q.area_cont
     else
-      @search_word = @q.mountain_name_or_address_or_elevation_or_station_or_season_or_parking_or_distance_or_area_or_furigana_cont
+      @search_word = @q.mountain_name_or_address_or_time_or_elevation_or_station_or_season_or_parking_or_distance_or_area_or_furigana_cont
     end
   end
 
