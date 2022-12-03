@@ -8,12 +8,13 @@
   <% end %>
   
   <div class='mountain_content'>
-    <p><%= @mountain.mountain_name %></p>
+    <p class='mountain_name'><%= @mountain.mountain_name %></p>
+    <p>読み方：<%= @mountain.furigana %></p>
     <p>総歩行時間：<%= @mountain.time %></p>
     <p>標高：<%= @mountain.elevation %>m</p>
 
-    難易度：
-    <div class="star">
+    <div class='star show_star'>
+      <font color='black'>難易度：</font>
       <% if @mountain.difficulty? %>
         <% for i in 1..@mountain.difficulty do %>
           ★
@@ -44,6 +45,7 @@
 
     <div class='comment_new'>
       <h4 class='comment_font'>口コミを投稿する</h4>
+      <font color='red'>*</font>は入力必須です。
       <%= form_with model:[@mountain, @comment] do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :mountain_id, value: @mountain.id %>
@@ -53,7 +55,7 @@
         </div>
         <div class='mb-3 row'>
           <%= f.label :content, "口コミ内容", class: 'col-sm-2 col-form-label required' %>
-          <%= f.text_field :content, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :content, autofocus: true, class: 'form-control form_height' %>
         </div>
         <%= f.submit "口コミを投稿する", class: 'w-100 btn btn-lg btn-secondary' %>
       <% end %>

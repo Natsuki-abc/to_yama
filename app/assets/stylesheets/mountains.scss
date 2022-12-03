@@ -23,27 +23,6 @@ td{
   margin: 50px;
 }
 
-.star-field{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: left;
-}
-.star-field input[type='radio']{
-  display: none;
-}
-.star-field label{
-  font-size: 50px;
-  padding-right: 10px;
-  color: #ccc;
-  font-size: 30px;
-  cursor: pointer;
-} 
-.star-field label:hover,
-.star-field label:hover ~ label,
-.star-field input[type='radio']:checked ~ label{
-  color: rgb(255, 145, 0);
-}
-
 //index
 div.mountain_index{
   padding: 10px 40px;
@@ -196,9 +175,17 @@ div.area_map{
 }
 
 // show
+.mountain_name{
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .star{
-font-size: 50px;
 color: rgb(255, 145, 0);
+}
+
+.show_star{
+  margin-bottom: 1rem;
 }
 
 .mountain_img{
@@ -233,8 +220,4 @@ color: rgb(255, 145, 0);
 
 .mountain_name{
   font-weight: bold;
-}
-
-.search_star{
-  font-size: 20px;
 }

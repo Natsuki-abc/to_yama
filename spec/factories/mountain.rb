@@ -10,5 +10,6 @@ FactoryBot.define do
     parking { Faker::String.random(length: 10..20) }
     distance { Faker::Number.number(digits: 2) }
     furigana { Faker::Lorem.words(number: 5) }
+    area { Faker::Lorem.words(number: 3) }
   end
 end
