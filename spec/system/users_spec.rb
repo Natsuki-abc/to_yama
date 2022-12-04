@@ -5,7 +5,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     @user = FactoryBot.build(:user)
   end
 
-  it 'TOPページに「新規登録ボタン」があること' do
+  it 'TOPページに「新規登録」ボタンがあること' do
     visit root_path
     expect(page).to have_content('新規登録')
   end
@@ -46,7 +46,7 @@ RSpec.describe 'ログイン', type: :system do
     @user = FactoryBot.create(:user)
   end
 
-  it 'TOPページに「ログインボタン」があること' do
+  it 'TOPページに「ログイン」ボタンがあること' do
     visit root_path
     expect(page).to have_content('ログイン')
   end
