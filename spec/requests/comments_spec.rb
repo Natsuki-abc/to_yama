@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Comments', type: :request do
-  describe 'GET /index' do
+  describe 'comment#index' do
     before do
       @user = FactoryBot.create(:user)
       sign_in @user
