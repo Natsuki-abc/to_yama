@@ -1,11 +1,11 @@
 <%= content_for(:title, 'TOP') %>
 
 <div class='top_page'>
-<p class='top_title'>登山へ行こう！</p>
+  <p class='top_title'>登山へ行こう！</p>
 </div>
 
 <div class='container marketing'>
-  <div class='row'>
+  <div class='row home_1'>
     <div class='col-lg-4'>
       <div class='top_1 image_circle'></div>
       <h2 class='top_three'>よくある質問</h2>
@@ -15,7 +15,7 @@
       <p><%= link_to "View details »", new_home_path, class: 'btn btn-secondary' %></p>
     </div>
 
-    <div class='col-lg-4'>
+    <div class='col-lg-4 home_2'>
       <div class='top_2 image_circle'></div>
       <h2 class='top_three'>山を探そう！</h2>
       <p>都道府県・地域毎に山を表示しています。</br>
@@ -24,7 +24,7 @@
       <p><%= link_to "View details »", mountains_path, class: 'btn btn-secondary' %></p>
     </div>
 
-    <div class='col-lg-4'>
+    <div class='col-lg-4 home_3'>
       <div class='top_3 image_circle'></div>
       <h2 class='top_three'>山の追加希望</h2>
       <p>このサイトにまだ載っていない山の</br>
