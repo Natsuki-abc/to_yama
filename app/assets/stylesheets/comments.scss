@@ -46,8 +46,8 @@
   border: 2px solid rgb(202, 202, 202);
   box-shadow: 0 0 2px rgb(200, 199, 199);
   border-radius: 10px;
-  padding: 10px;
-  margin: 20px 20px 0 20px;
+  padding: 30px;
+  margin: 40px 20px 0 20px;
 }
 
 .comment_link{
@@ -56,4 +56,14 @@
 
 .comment_link:hover{
   color: gray;
+}
+
+//comment#edit
+.comment_edit{
+  width: 80% !important;
+}
+
+.comment_delete{
+  margin: 15px 0;
+  width: 100%;
 }

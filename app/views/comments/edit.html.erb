@@ -1,0 +1,22 @@
+<%= content_for(:title, '口コミ編集') %>
+
+<div class='comment_index'>
+  <h4 class='comment_font'>口コミを編集する</h4>
+  <font color='red'>*</font>は入力必須です。
+  <div class='comment_list'>
+    <p>口コミ投稿した山：<%= @comment.mountain.mountain_name %></p>
+    <%= form_with model: @comment do |f| %>
+      <div class='mb-3'>
+        <%= f.label :title, 'タイトル', class: 'col-sm-2 col-form-label required' %></br>
+        <%= f.text_field :title, autofocus: true, class: 'form-control comment_edit' %>
+      </div>
+      <div class='mb-3'>
+        <%= f.label :content, '口コミ内容', class: 'col-sm-2 col-form-label required' %></br>
+        <%= f.text_field :content, autofocus: true, class: 'form-control form_height comment_edit' %>
+      </div>
+      <%= f.submit '編集完了', class: 'w-100 btn btn-lg btn-secondary' %>
+      <%= link_to '口コミを削除する', @comment, method: :delete, data:{ confirm:'本当に削除しますか？'}, class: 'btn btn-outline-danger comment_delete' %></br>
+      <%= link_to '口コミ履歴に戻る', :comments, class: 'comment_link' %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<%= content_for(:title, "口コミ履歴") %>
+<%= content_for(:title, '口コミ履歴') %>
 
 <div class='comment_index'>
   <h1><%= current_user.name %>さんの口コミ履歴</h1>
@@ -8,6 +8,7 @@
         <p>山の名前：<%= link_to comments.mountain.mountain_name, mountain_path(comments.mountain_id), class: 'comment_link' %></p>
         <p>タイトル：<%= comments.title %></p>
         <p>内容：<%= comments.content %></p>
+        <%= link_to '編集する', [:edit, comments], class: 'btn btn-outline-success' %>
       </li>
     </div>
   <% end %>

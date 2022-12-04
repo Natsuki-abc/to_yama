@@ -12,10 +12,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @mountain = @comment.mountain_id
     if @comment.save
-      flash[:notice] = "新規口コミを投稿しました"
+      flash[:notice] = '新規口コミを投稿しました'
       redirect_to mountain_path(@mountain)
     else
-      flash[:notice] = "口コミの投稿に失敗しました"
+      flash[:notice] = '口コミの投稿に失敗しました'
       redirect_to mountain_path(@mountain)
     end
   end
@@ -24,12 +24,25 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
   end
 
   def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      flash[:notice] = '口コミを更新しました'
+      redirect_to comments_path(current_user)
+    else
+      flash.now[:notice] = '口コミの編集に失敗しました'
+      render 'edit'
+    end
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:notice] = '口コミを削除しました'
+    redirect_to comments_path(current_user)
   end
 
   def comment_params
