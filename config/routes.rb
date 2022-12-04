@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
 
-  resources :home, only: [:index, :new]
+  resources :home, only: [:index]
+  resources :contact, only: [:index]
   resources :mountains, only: [:index, :new, :show] do
     collection do
       get 'search'
