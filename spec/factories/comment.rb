@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    title { Faker::String.random(length: 3..10) }
-    content { Faker::String.random(length: 10..20) }
+    title { Faker::Lorem.characters(number: 5) }
+    content { Faker::Lorem.characters(number: 30) }
     user
     mountain
   end
