@@ -17,7 +17,7 @@ RSpec.describe 'User', type: :request do
 
   describe 'パスワード再設定' do
     it 'statusが200であること' do
-      get new_password_path(resource_name)
+      get new_user_password_path
       expect(response).to have_http_status(200)
     end
   end
