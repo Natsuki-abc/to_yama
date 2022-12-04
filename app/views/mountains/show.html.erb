@@ -4,7 +4,7 @@
   <% if @mountain.mountain_image.present? %>
     <%= image_tag @mountain.mountain_image.url, class: 'mountain_img' %>
   <% else %>
-    <%= image_tag "/assets/room.jpg", class: "room_img" %>
+    <%= image_tag '/assets/room.jpg', class: 'room_img' %>
   <% end %>
   
   <div class='mountain_content'>
@@ -52,14 +52,14 @@
         <% end %>
         <%= f.hidden_field :mountain_id, value: @mountain.id %>
         <div class='mb-3 row'>
-          <%= f.label :title, "タイトル", class: 'col-sm-2 col-form-label required' %>
+          <%= f.label :title, 'タイトル', class: 'col-sm-2 col-form-label required' %>
           <%= f.text_field :title, autofocus: true, class: 'form-control' %>
         </div>
         <div class='mb-3 row'>
-          <%= f.label :content, "口コミ内容", class: 'col-sm-2 col-form-label required' %>
+          <%= f.label :content, '口コミ内容', class: 'col-sm-2 col-form-label required' %>
           <%= f.text_field :content, autofocus: true, class: 'form-control form_height' %>
         </div>
-        <%= f.submit "口コミを投稿する", class: 'w-100 btn btn-lg btn-secondary' %>
+        <%= f.submit '口コミを投稿する', class: 'w-100 btn btn-lg btn-secondary' %>
       <% end %>
     </div>
   </div>
