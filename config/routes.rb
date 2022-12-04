@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index]
   resources :contact, only: [:index]
+  resources :faq, only: [:index]
   resources :mountains, only: [:index, :new, :show] do
     collection do
       get 'search'
