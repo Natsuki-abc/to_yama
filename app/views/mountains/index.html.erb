@@ -1,7 +1,5 @@
 <%= content_for(:title, '山を探す') %>
 
-<%= link_to '山の新規登録', new_mountain_path %>
-
 <div class='mountain_index'>
   <div class='free_word'>
     <%= search_form_for @q, url: search_mountains_path do |f| %>
