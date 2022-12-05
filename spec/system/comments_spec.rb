@@ -89,14 +89,10 @@ RSpec.describe 'Comments', type: :system do
       visit edit_comment_path(comment.id)
     end
 
-    it '' do
+    it '削除することができること' do
       expect{
-        fill_in 'comment[title]', with: '土曜日に行ってきました！'
-        fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
-        click_button '口コミを投稿する'
-      }.to change { Comment.count }.by(1)
-
-      expect(current_path).to eq mountain_path(mountain.id)
+        click_link '口コミを削除する'
+      }.to change { Comment.count }.by(-1)
     end
   end
 end
