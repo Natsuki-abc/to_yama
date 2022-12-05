@@ -39,6 +39,11 @@ RSpec.describe 'Comments', type: :system do
       click_link comment.mountain.mountain_name
       expect(current_path).to eq mountain_path(comment.mountain_id)
     end
+
+    it '「編集する」をクリックすると、comment#editページに移管すること' do
+      click_link '編集する'
+      expect(current_path).to eq edit_comment_path(comment.id)
+    end
   end
 
   describe 'comment#create' do
@@ -48,13 +53,15 @@ RSpec.describe 'Comments', type: :system do
 
     context 'ログインしている場合'do
       it 'タイトル・内容が入力されていると、口コミ投稿ができ、mountain#showのままであること' do
-        expect{
-          fill_in 'comment[title]', with: '土曜日に行ってきました！'
-          fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
-          click_button '口コミを投稿する'
-        }.to change { Comment.count }.by(1)
+        within '.comment_create' do
+          expect{
+            fill_in 'comment[title]', with: '土曜日に行ってきました！'
+            fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
+            click_button '口コミを投稿する'
+          }.to change { Comment.count }.by(1)
 
-        expect(current_path).to eq mountain_path(mountain.id)
+          expect(current_path).to eq mountain_path(mountain.id)
+        end
       end
     end
 
@@ -64,14 +71,32 @@ RSpec.describe 'Comments', type: :system do
       end
 
       it 'タイトル・内容を入力しても、口コミ投稿できず、ログイン画面に移管すること' do
-        expect{
-          fill_in 'comment[title]', with: '土曜日に行ってきました！'
-          fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
-          click_button '口コミを投稿する'
-        }.to change { Comment.count }.by(0)
+        within '.comment_create' do
+          expect{
+            fill_in 'comment[title]', with: '土曜日に行ってきました！'
+            fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
+            click_button '口コミを投稿する'
+          }.to change { Comment.count }.by(0)
 
-        expect(current_path).to eq new_user_session_path
+          expect(current_path).to eq new_user_session_path
+        end
       end
+    end
+  end
+
+  describe 'comment#destroy' do
+    before do
+      visit edit_comment_path(comment.id)
+    end
+
+    it '' do
+      expect{
+        fill_in 'comment[title]', with: '土曜日に行ってきました！'
+        fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
+        click_button '口コミを投稿する'
+      }.to change { Comment.count }.by(1)
+
+      expect(current_path).to eq mountain_path(mountain.id)
     end
   end
 end
