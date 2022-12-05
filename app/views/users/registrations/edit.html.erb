@@ -38,9 +38,6 @@
             <div class='mb-3'>
               <%= f.password_field :password_confirmation, :placeholder => 'パスワード確認用(変更する場合のみ入力)', autofocus: true, autocomplete: 'new-password', class: 'form-control' %>
             </div>
-            <div class='mb-3'>
-              <%= f.password_field :current_password, :placeholder => '現在のパスワードを入力して下さい', autofocus: true, autocomplete: 'current-password', class: 'form-control' %>
-            </div>
             <div class='actions'>
               <%= f.submit '更新', class: 'w-100 btn btn-lg btn-secondary' %>
             </div>
