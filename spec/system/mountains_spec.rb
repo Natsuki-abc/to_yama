@@ -45,8 +45,10 @@ RSpec.describe 'Mountains', type: :system do
     end
 
     it '山の画像をクリックするとmountain#showに移管すること' do
-      click_link mountain.mountain_image
-      expect(current_path).to eq mountain_path(mountain.id)
+      within '.search_mountain1' do
+        click_link
+        expect(current_path).to eq mountain_path(mountain.id)
+      end
     end
   end
 end

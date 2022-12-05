@@ -7,7 +7,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def ensure_normal_user
     if resource.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
+      flash[:notice] = 'ゲストユーザーの更新・削除はできません。'
+      redirect_to root_path
     end
   end
 
@@ -63,7 +64,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    user_path(current_user)
+    flash[:notice] = 'アカウント情報を編集しました'
+    root_path
   end
 
   # 認証が必要なユーザーの登録完了後の遷移先

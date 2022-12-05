@@ -11,6 +11,5 @@ FactoryBot.define do
     distance { Faker::Number.number(digits: 2) }
     furigana { Faker::Lorem.characters(number: 5) }
     area { Faker::Address.state }
-    mountain_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg'))}
   end
 end

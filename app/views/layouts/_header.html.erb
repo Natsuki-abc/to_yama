@@ -7,7 +7,6 @@
         <li><%= link_to 'TOP', root_path, class: 'nav-link px-2 link-dark' %></li>
         <li><%= link_to '山を探す', mountains_path, class: 'nav-link px-2 link-dark' %></li>
         <li><%= link_to 'ランキング', home_index_path, class: 'nav-link px-2 link-dark' %></li>
-        <li><%= link_to 'ルーム登録', home_index_path, class: 'nav-link px-2 link-dark' %></li>
       </ul>
 
       <% if user_signed_in? %>
@@ -20,7 +19,6 @@
           <ul class='dropdown-menu text-small' style=''>
             <li><%= link_to 'アカウント編集', edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
             <li><%= link_to '口コミ履歴', comments_path(current_user), class: 'dropdown-item' %></li>
-            <li><%= link_to '気になる山', user_session_path(current_user), class: 'dropdown-item' %></li>
             <li><hr class='dropdown-divider'></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
           </ul>
