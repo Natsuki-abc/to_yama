@@ -28,7 +28,7 @@ RSpec.describe 'Comments', type: :system do
       expect(page).to have_content(comment.mountain.mountain_name)
     end
 
-    it 'ログインしていないユーザーが投稿した口コミは表示されないこと' do
+    it '他のユーザーが投稿した口コミは表示されないこと' do
       within '.comment_index' do
         expect(page).not_to have_content(other_comment.title)
         expect(page).not_to have_content(other_comment.content)

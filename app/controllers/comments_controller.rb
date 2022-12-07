@@ -31,10 +31,10 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      flash[:notice] = '口コミを更新しました'
+      flash[:notice] = '口コミを編集しました'
       redirect_to comments_path
     else
-      flash.now[:notice] = '口コミの更新に失敗しました'
+      flash.now[:notice] = '口コミの編集に失敗しました'
       render 'edit'
     end
   end
