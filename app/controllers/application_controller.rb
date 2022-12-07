@@ -18,8 +18,5 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  # def not_authenticated
-  #   flash[:notice] = 'ログインしてください'
-  #   redirect_to main_app.login_path #main_appのプレフィックスをつける
-  # end
+
 end
