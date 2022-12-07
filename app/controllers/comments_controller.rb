@@ -29,20 +29,26 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update(comment_params)
+    if @comment.user_id == current_user.id
+      @comment.update(comment_params)
       flash[:notice] = '口コミを更新しました'
-      redirect_to comments_path(current_user)
+      redirect_to comments_path
     else
-      flash.now[:notice] = '口コミの編集に失敗しました'
+      flash.now[:notice] = '他のユーザーが投稿した口コミは編集できません'
       render 'edit'
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    flash[:notice] = '口コミを削除しました'
-    redirect_to comments_path(current_user)
+    if @comment.user_id == current_user.id
+      @comment.destroy
+      flash[:notice] = '口コミを削除しました'
+      redirect_to comments_path
+    else
+      flash.now[:notice] = '他のユーザーが投稿した口コミは削除できません'
+      render 'edit'
+    end
   end
 
   def comment_params

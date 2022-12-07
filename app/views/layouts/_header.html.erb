@@ -17,7 +17,7 @@
           <% end %>
           <ul class='dropdown-menu text-small' style=''>
             <li><%= link_to 'アカウント編集', edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
-            <li><%= link_to '口コミ履歴', comments_path(current_user), class: 'dropdown-item' %></li>
+            <li><%= link_to '口コミ履歴', comments_path, class: 'dropdown-item' %></li>
             <li><hr class='dropdown-divider'></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
           </ul>
