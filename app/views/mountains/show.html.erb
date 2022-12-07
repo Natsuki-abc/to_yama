@@ -31,6 +31,9 @@
   <div class='google_map'>
     <p>所在地</p>
   </div>
+  <div class='map-wrap'>
+    <div id='map' class='map'></div>
+  </div>
 
   <div class='mountain_comment'>
     <h4 class='comment_font'>口コミ一覧</h4>
@@ -66,3 +69,6 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'map' %>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
