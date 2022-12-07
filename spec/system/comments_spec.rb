@@ -91,8 +91,18 @@ RSpec.describe 'Comments', type: :system do
 
     it '削除することができること' do
       expect{
-        click_link '口コミを削除する'
-      }.to change { Comment.count }.by(-1)
+        page.accept_confirm do
+          click_link '口コミを削除する'
+        end
+      }.to change {Comment.count}.by(-1)
+
+      expect(current_path).to eq comments_path
     end
+
+    context 'アカウントを削除した場合' do
+      it 'userを削除すると、userが書いたcommentも削除されること' do
+        expect{ user.destroy }.to change{ Comment.count }.by(-1)
+      end
+    end  
   end
 end

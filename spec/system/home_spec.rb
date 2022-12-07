@@ -7,20 +7,24 @@ RSpec.describe 'Home#index', type: :system do
 
   describe 'Header' do
     it 'TOPボタンを押すと、TOPページにアクセスできること' do
-      click_link 'TOP'
-      expect(current_path).to eq root_path
+      within 'header' do
+        click_link 'TOP'
+        expect(current_path).to eq root_path
+      end
     end
 
     it '「山を探す」ボタンを押すと、mountain#indexにアクセスできること' do
-      click_link '山を探す'
-      expect(current_path).to eq mountains_path
+      within 'header' do
+        click_link '山を探す'
+        expect(current_path).to eq mountains_path
+      end
     end
   end
 
   describe 'Main' do
-    it 'home#newに移管すること' do
+    it 'faq#indexに移管すること' do
       click_link 'View details »', match: :first
-      expect(current_path).to eq new_home_path
+      expect(current_path).to eq faq_index_path
     end
 
     it 'mountain#indexに移管すること' do
@@ -30,18 +34,27 @@ RSpec.describe 'Home#index', type: :system do
       end
     end
 
-    it 'home#newページに移管すること' do
+    it 'contact#indexに移管すること' do
       within '.home_3' do
         click_link 'View details »'
-        expect(current_path).to eq new_home_path
+        expect(current_path).to eq contact_index_path
       end
     end
   end
 
   describe 'Footer' do
-    it '「お問合せ（山の追加希望もこちら）」ボタンを押すと、home#newにアクセスできること' do
-      click_link 'お問合せ（山の追加希望もこちら）'
-      expect(current_path).to eq new_home_path
+    it '「お問合せ（山の追加希望もこちら）」をクリックすると、contact#indexに移管すること' do
+      within 'footer' do
+        click_link 'お問合せ（山の追加希望もこちら）'
+        expect(current_path).to eq contact_index_path
+      end
+    end
+
+    it '「FAQ」をクリックすると、faq#indexに移管すること' do
+      within 'footer' do
+        click_link 'FAQ'
+        expect(current_path).to eq faq_index_path
+      end
     end
   end
 end
