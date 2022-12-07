@@ -25,7 +25,8 @@ RSpec.describe 'Comments', type: :request do
 
   describe 'comment#update' do
     it '口コミを編集できること' do
-      expect(comment.reload.title).to eq '良かったです'
+      comment.title = 'hogehoge'
+      expect(comment.reload.title).to eq 'hogehoge'
     end
   end
 end
