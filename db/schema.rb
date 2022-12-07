@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_07_060206) do
+ActiveRecord::Schema.define(version: 2022_12_07_065203) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2022_12_07_060206) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "furigana"
     t.string "area"
-    t.float "Latitude"
-    t.float "Longitude"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
