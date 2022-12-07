@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!
+  before_action :ensure_user, only: [:edit, :update, :destroy]
 
   def index
     @comments = current_user.comments
@@ -29,29 +30,31 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.user_id == current_user.id
-      @comment.update(comment_params)
+    if @comment.update(comment_params)
       flash[:notice] = '口コミを更新しました'
       redirect_to comments_path
     else
-      flash.now[:notice] = '他のユーザーが投稿した口コミは編集できません'
+      flash.now[:notice] = '口コミの更新に失敗しました'
       render 'edit'
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.user_id == current_user.id
-      @comment.destroy
-      flash[:notice] = '口コミを削除しました'
-      redirect_to comments_path
-    else
-      flash.now[:notice] = '他のユーザーが投稿した口コミは削除できません'
-      render 'edit'
-    end
+    @comment.destroy
+    flash[:notice] = '口コミを削除しました'
+    redirect_to comments_path
   end
 
   def comment_params
     params.require(:comment).permit(:user_id, :mountain_id, :title, :content)
+  end
+
+  private
+  def ensure_user
+    @comment = Comment.find(params[:id])
+    if @comment.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 end

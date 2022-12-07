@@ -96,7 +96,7 @@ RSpec.describe 'Comments', type: :system do
         expect(page).to have_content '口コミを削除しました'
         }. to change{Comment.count}.by(-1)
 
-        expect(current_path).to eq comments_path(user.id)
+        expect(current_path).to eq comments_path
     end
 
     context 'アカウントを削除した場合' do
