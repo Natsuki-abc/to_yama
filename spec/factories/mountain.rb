@@ -11,5 +11,7 @@ FactoryBot.define do
     distance { Faker::Number.number(digits: 2) }
     furigana { Faker::Lorem.characters(number: 5) }
     area { Faker::Address.state }
+    latitude { 35.36114966114941 }
+    longitude { 138.7281787550724 }
   end
 end

@@ -90,6 +90,7 @@ RSpec.describe 'Comments', type: :system do
     end
 
     it '削除することができること' do
+      binding.pry
       expect{
         page.accept_confirm do
           click_link '口コミを削除する'
