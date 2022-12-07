@@ -181,7 +181,7 @@ div.area_map{
 }
 
 .star{
-color: rgb(255, 145, 0);
+  color: rgb(255, 145, 0);
 }
 
 .show_star{
@@ -196,9 +196,13 @@ color: rgb(255, 145, 0);
   margin: 40px;
 }
 
+.google_map{
+  margin: 40px;
+}
+
 .map-wrap {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
   padding-top: (465 / 1440 * 100%);
   .map {

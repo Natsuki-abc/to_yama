@@ -7,6 +7,8 @@ class MountainsController < ApplicationController
 
   def show
     @mountain = Mountain.find(params[:id])
+    gon.latitude = @mountain.latitude
+    gon.longitude = @mountain.longitude
     @comments = @mountain.comments
     @comment = Comment.new
   end

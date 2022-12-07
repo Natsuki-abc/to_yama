@@ -28,11 +28,11 @@
     <p>歩行距離：<%= @mountain.distance %>km</p>
   </div>
 
-  <div class='google_map'>
-    <p>所在地</p>
-  </div>
-  <div class='map-wrap'>
-    <div id='map' class='map'></div>
+  <div class ='google_map'>
+    <h4 class='comment_font'>マップ</h4>
+    <div class='map-wrap'>
+      <div id='map' class='map'></div>
+    </div>
   </div>
 
   <div class='mountain_comment'>
@@ -70,5 +70,6 @@
   </div>
 </div>
 
+<%= include_gon %>
 <%= javascript_pack_tag 'map' %>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
