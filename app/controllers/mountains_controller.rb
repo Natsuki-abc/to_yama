@@ -29,7 +29,7 @@ class MountainsController < ApplicationController
     params.require(:mountain)
           .permit(:mountain_name, :address, :time, :elevation, :difficulty,
                   :station, :parking, :distance, :mountain_image, :area,
-                  :Latitude, :Longitude, season: [])
+                  :latitude, :longitude, season: [])
   end
 
   def season_string
