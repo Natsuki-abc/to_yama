@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Comments', type: :request do
   let!(:user) { create(:user) }
   let!(:mountain) { create(:mountain) }
-  let!(:comment) { create(:comment, user_id: user.id, mountain_id: mountain.id) }  
-  
+  let!(:comment) { create(:comment, user_id: user.id, mountain_id: mountain.id) }
+
   before do
     sign_in user
   end
@@ -24,9 +24,10 @@ RSpec.describe 'Comments', type: :request do
   end
 
   describe 'comment#update' do
+    let!(:comment) { create(:comment, title: 'hoge') }
+
     it '口コミを編集できること' do
-      comment.title = 'hogehoge'
-      expect(comment.reload.title).to eq 'hogehoge'
+      expect(comment.reload.title).to eq 'hoge'
     end
   end
 end

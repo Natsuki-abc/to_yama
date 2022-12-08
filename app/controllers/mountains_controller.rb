@@ -1,5 +1,5 @@
 class MountainsController < ApplicationController
-  before_action :season_string, only: [:create, :update] 
+  before_action :season_string, only: [:create, :update]
   before_action :set_q, only: [:index, :search]
 
   def index
@@ -17,7 +17,7 @@ class MountainsController < ApplicationController
     @results = @q.result
     if @q.address_cont.present?
       @search_word = @q.address_cont
-    elsif @q.area_cont.present? 
+    elsif @q.area_cont.present?
       @search_word = @q.area_cont
     else
       @search_word =

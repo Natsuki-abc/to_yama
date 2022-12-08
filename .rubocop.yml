@@ -56,3 +56,6 @@ Style/FrozenStringLiteralComment:
 
 Naming/MethodParameterName:
  MinNameLength: 1
+
+Naming/AsciiIdentifiers:
+ Enabled: false

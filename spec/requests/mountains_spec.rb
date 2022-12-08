@@ -19,52 +19,52 @@ RSpec.describe 'Mountains', type: :request do
 
   describe 'mountain#search' do
     it 'statusが200であること' do
-      get search_mountains_path(q:{area_cont:"mountain.area"})
+      get search_mountains_path(q: { area_cont: 'mountain.area' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{address_cont:"mountain.address"})
+      get search_mountains_path(q: { address_cont: 'mountain.address' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{mountain_name_cont:"mountain.mountain_name"})
+      get search_mountains_path(q: { mountain_name_cont: 'mountain.mountain_name' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{time_cont:"mountain.time"})
+      get search_mountains_path(q: { time_cont: 'mountain.time' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{elevation_cont:"mountain.elevation"})
+      get search_mountains_path(q: { elevation_cont: 'mountain.elevation' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{atation_cont:"mountain.staion"})
+      get search_mountains_path(q: { atation_cont: 'mountain.staion' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{season_cont:"mountain.season"})
+      get search_mountains_path(q: { season_cont: 'mountain.season' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{parking_cont:"mountain.parking"})
+      get search_mountains_path(q: { parking_cont: 'mountain.parking' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{distance_cont:"mountain.distance"})
+      get search_mountains_path(q: { distance_cont: 'mountain.distance' })
       expect(response).to have_http_status(200)
     end
 
     it 'statusが200であること' do
-      get search_mountains_path(q:{furigana_cont:"mountain.furigana"})
+      get search_mountains_path(q: { furigana_cont: 'mountain.furigana' })
       expect(response).to have_http_status(200)
     end
   end

@@ -51,14 +51,14 @@ RSpec.describe 'Comments', type: :system do
       visit mountain_path(mountain.id)
     end
 
-    context 'ログインしている場合'do
+    context 'ログインしている場合' do
       it 'タイトル・内容が入力されていると、口コミ投稿ができ、mountain#showのままであること' do
         within '.comment_create' do
-          expect{
+          expect do
             fill_in 'comment[title]', with: '土曜日に行ってきました！'
             fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
             click_button '口コミを投稿する'
-          }.to change { Comment.count }.by(1)
+          end.to change { Comment.count }.by(1)
 
           expect(current_path).to eq mountain_path(mountain.id)
         end
@@ -72,11 +72,11 @@ RSpec.describe 'Comments', type: :system do
 
       it 'タイトル・内容を入力しても、口コミ投稿できず、ログイン画面に移管すること' do
         within '.comment_create' do
-          expect{
+          expect do
             fill_in 'comment[title]', with: '土曜日に行ってきました！'
             fill_in 'comment[content]', with: '駐車場にトイレもあり、良かったです。'
             click_button '口コミを投稿する'
-          }.to change { Comment.count }.by(0)
+          end.to change { Comment.count }.by(0)
 
           expect(current_path).to eq new_user_session_path
         end
@@ -91,18 +91,18 @@ RSpec.describe 'Comments', type: :system do
 
     it '口コミを削除できること' do
       click_link '口コミを削除する'
-      expect{
+      expect do
         expect(page.accept_confirm).to eq '本当に削除しますか？'
         expect(page).to have_content '口コミを削除しました'
-        }. to change{Comment.count}.by(-1)
+      end.to change { Comment.count }.by(-1)
 
-        expect(current_path).to eq comments_path
+      expect(current_path).to eq comments_path
     end
 
     context 'アカウントを削除した場合' do
       it 'userを削除すると、userが書いたcommentも削除されること' do
-        expect{ user.destroy }.to change{ Comment.count }.by(-1)
+        expect { user.destroy }.to change{ Comment.count }.by(-1)
       end
-    end  
+    end
   end
 end

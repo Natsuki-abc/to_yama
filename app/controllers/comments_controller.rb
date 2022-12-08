@@ -14,11 +14,10 @@ class CommentsController < ApplicationController
     @mountain = @comment.mountain_id
     if @comment.save
       flash[:notice] = '新規口コミを投稿しました'
-      redirect_to mountain_path(@mountain)
     else
-      flash[:notice] = '口コミの投稿に失敗しました'
-      redirect_to mountain_path(@mountain)
+      flash.now[:notice] = '口コミの投稿に失敗しました'
     end
+    redirect_to mountain_path(@mountain)
   end
 
   def show
@@ -51,10 +50,9 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def ensure_user
     @comment = Comment.find(params[:id])
-    if @comment.user_id != current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless @comment.user_id == current_user.id
   end
 end

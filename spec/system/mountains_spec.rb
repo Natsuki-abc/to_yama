@@ -21,7 +21,7 @@ RSpec.describe 'Mountains', type: :system do
     let!(:tohoku_mountain) { create(:mountain, area: '東北') }
 
     before do
-      visit search_mountains_path(q:{area_cont:'四国'})
+      visit search_mountains_path(q: { area_cont: '四国' })
     end
 
     it '検索結果画面に違う地域の山が含まれていないこと' do

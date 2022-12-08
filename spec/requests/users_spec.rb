@@ -27,7 +27,7 @@ RSpec.describe 'User', type: :request do
       @user = FactoryBot.create(:user)
       sign_in @user
     end
-    
+
     it 'statusが200であること' do
       get edit_user_registration_path(@user.id)
       expect(response).to have_http_status(200)
