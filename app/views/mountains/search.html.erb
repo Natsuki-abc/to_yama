@@ -8,7 +8,11 @@
       <li>
         <div class='search_content'>
           <div class='search_mountain1'>
-            <%= link_to (image_tag results.mountain_image_url, class: 'search_mountain_img' if results.mountain_image.present?), results %>
+            <% if results.mountain_image.present? %>
+              <%= link_to (image_tag results.mountain_image_url, class: 'search_mountain_img'), results %>
+            <% else %>
+              <%= link_to (image_tag '/assets/yama_default.jpg', class: 'search_mountain_img'), results %>
+            <% end %>
           </div>
           <div class='search_mountain'>
             <h4 class='mountain_name'><%= results.mountain_name %></h4>
