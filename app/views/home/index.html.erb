@@ -1,77 +1,94 @@
 <%= content_for(:title, 'TOP') %>
 
 <div class='top_page'>
-<p class='top_title'>登山へ行こう！</p>
+  <p class='top_title'>登山へ行こう！</p>
 </div>
 
 <div class='container marketing'>
-  <!-- Three columns of text below the carousel -->
-  <div class='row'>
+  <div class='row home_1'>
     <div class='col-lg-4'>
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+      <div class='top_1 image_circle'></div>
+      <h2 class='top_three'>よくあるご質問</h2>
+      <p>お問合せの前にまずはこちらを</br>
+        ご確認ください。
+      </p>
+      <p><%= link_to 'View details »', faq_index_path, class: 'btn btn-secondary' %></p>
+    </div>
 
-      <h2 class="fw-normal">Heading</h2>
-      <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-      <p><a class="btn btn-secondary" href="#">View details »</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+    <div class='col-lg-4 home_2'>
+      <div class='top_2 image_circle'></div>
+      <h2 class='top_three'>山を探そう！</h2>
+      <p>都道府県・地域毎に山を表示しています。</br>
+        近くの山を探してみよう！
+      </p>
+      <p><%= link_to 'View details »', mountains_path, class: 'btn btn-secondary' %></p>
+    </div>
 
-      <h2 class="fw-normal">Heading</h2>
-      <p>Another exciting bit of representative placeholder content. This time, we have moved on to the second column.</p>
-      <p><a class="btn btn-secondary" href="#">View details »</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-      <h2 class="fw-normal">Heading</h2>
-      <p>And lastly this, the third column of representative placeholder content.</p>
-      <p><a class="btn btn-secondary" href="#">View details »</a></p>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
-
+    <div class='col-lg-4 home_3'>
+      <div class='top_3 image_circle'></div>
+      <h2 class='top_three'>山の追加希望</h2>
+      <p>このサイトにまだ載っていない山の</br>
+        追加希望をお待ちしております。
+      </p>
+      <p><%= link_to 'View details »', contact_index_path, class: 'btn btn-secondary' %></p>
+    </div>
+  </div>
 
   <!-- START THE FEATURETTES -->
 
-  <hr class="featurette-divider">
+  <hr class='featurette-divider'>
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-      <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+  <div class='row featurette'>
+    <div class='col-md-7'>
+      <h2 class='featurette-heading fw-normal lh-1'>登山のメリット</h2>
+      <p class='lead'>
+        登山は時間をかけて山道を歩き続ける有酸素運動になります。また、登り下りのある山道なので足腰の筋力を鍛える筋力トレーニングの効果もあります。石や岩がある自然の道を歩く際にはバランスを保つ力も大切になります。
+        精神面でも自然の中を歩いたり、きれいな景色を見ることでリラックス効果があります。心身ともに健康にとてもよい効果があるといえます。
+      </p>
     </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it is that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+    <div class='col-md-5'>
+      <%= image_tag 'top_merit.jpg', size: '500x334', alt: '女性が登山している画像' %>
     </div>
   </div>
 
-  <hr class="featurette-divider">
+  <hr class='featurette-divider'>
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+  <div class='row featurette'>
+    <div class='col-md-7 order-md-2'>
+      <h2 class='featurette-heading fw-normal lh-1'>登山をする際の注意事項</h2>
+      <p class='lead'>
+        1.迷子</br>
+        &emsp;GPSや地図アプリ、コンパス等を使用して、こまめに現在地を確認しましょう。</br>
+        2.体温調節</br>
+        &emsp;暑くも寒くもない格好を心がけましょう。脱ぎ着しやすい服がBest！</br>
+        3.適度な休憩</br>
+        &emsp;休憩しすぎると、体を冷やしすぎてしまうことも、、</br>
+        &emsp;休まなくても無理のないペースが良いと言われています。</br>
+        4.エネルギー源・水分補給</br>
+        &emsp;こまめな補給を心がけましょう。</br>
+        5.無理はしない！</br>
+        &emsp;天候の悪化や体調不良等があった際は、無理をせずに下山しましょう。</br>
+        詳細は<%= link_to 'こちらのサイト', 'https://yamap.com/magazine/2474', class: '' %>へ！
+      </p>
     </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+    <div class='col-md-5 order-md-1'>
+      <%= image_tag 'top_maigo.jpg', size: '500x334', alt: '子供が迷子の画像' %>
     </div>
   </div>
 
-  <!-- /END THE FEATURETTES -->
+  <hr class='featurette-divider'>
 
-</div><!-- /.container -->
+  <div class='row featurette'>
+    <div class='col-md-7'>
+      <h2 class='featurette-heading fw-normal lh-1'>もしものために<span class='text-muted'>〜登山保険〜</span></h2>
+      <p class='lead'>
+      もし、遭難した場合、捜索費用が莫大になる可能性が、、！</br>
+      様々な会社が日帰りタイプから年間タイプまで、登山保険を出しております。</br>
+      <%= link_to 'こちらのサイト', 'https://yamahack.com/1204', class: '' %>で詳しくまとめられているので、登山へ行く際は登山保険の契約も忘れずに！
+      </p>
+    </div>
+    <div class='col-md-5'>
+      <%= image_tag 'top_hoken.jpg', size: '500x334', alt: '山岳救助ヘリの画像' %>
+    </div>
+  </div>
+</div>

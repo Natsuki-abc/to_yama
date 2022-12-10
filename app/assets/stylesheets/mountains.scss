@@ -23,57 +23,26 @@ td{
   margin: 50px;
 }
 
-.star-field{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: left;
-}
-.star-field input[type='radio']{
-  display: none;
-}
-.star-field label{
-  font-size: 50px;
-  padding-right: 10px;
-  color: #ccc;
-  font-size: 30px;
-  cursor: pointer;
-} 
-.star-field label:hover,
-.star-field label:hover ~ label,
-.star-field input[type='radio']:checked ~ label{
-  color: rgb(255, 145, 0);
-}
-
 //index
-.mountain_index{
+div.mountain_index{
   padding: 10px 40px;
 }
 
-.area{
+.free_word{
+  margin: 20px;
+}
+
+.search_keyword{
+  width: 50% !important;
+  margin: auto;
+}
+
+div.area{
   padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-.area_map{
-  width: 50%;
-}
-
-// show
-.star{
-font-size: 50px;
-color: rgb(255, 145, 0);
-}
-
-.mountain_img{
-  width: 100%;
-}
-
-.mountain_content{
-  margin: 40px;
-}
-
-//検索関係
 .mountain_link{
   text-decoration: none;
   color: black;
@@ -83,6 +52,171 @@ color: rgb(255, 145, 0);
   color: gray;
 }
 
+div.area_map{
+  position: relative;
+  width: 50%;
+}
+
+.area_link{
+  position: absolute;
+  background-color: black;
+  color: white !important;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.area_link:hover{
+  background-color: rgb(56, 56, 56);
+}
+
+.hokkaido{
+  top: 50px;
+  right: 10px;
+}
+.tohoku{
+  top: 280px;
+  right: 75px;
+}
+.kanto{
+  bottom: 165px;
+  right: 90px;
+}
+.koshinetsu{
+  bottom: 220px;
+  right: 185px;
+}
+.tokai{
+  bottom: 150px;
+  right: 245px;
+}
+.hokuriku{
+  bottom: 220px;
+  left: 290px;
+}
+.kinki{
+  bottom: 95px;
+  left: 285px;
+}
+.tyugoku{
+  bottom: 240px;
+  left: 185px;
+}
+.shikoku{
+  bottom: 65px;
+  left: 190px;
+}
+.kyusyu{
+  bottom: 190px;
+  left: 80px;
+}
+.okinawa{
+  bottom: 10px;
+  left: 30px;
+}
+
+@media screen and (min-width:992px) and (max-width:1200px){
+  .area_link{
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+
+  .hokkaido{
+    top: 40px;
+    right: 0;
+  }
+  .tohoku{
+    top: 218px;
+    right: 66px;
+  }
+  .kanto{
+    bottom: 154px;
+    right: 52px;
+  }
+  .koshinetsu{
+    bottom: 230px;
+    right: 125px;
+  }
+  .tokai{
+    bottom: 173px;
+    right: 195px;
+  }
+  .hokuriku{
+    bottom: 237px;
+    left: 231px;
+  }
+  .kinki{
+    bottom: 144px;
+    left: 218px;
+  }
+  .tyugoku{
+    bottom: 253px;
+    left: 147px;
+  }
+  .shikoku{
+    bottom: 117px;
+    left: 150px;
+  }
+  .kyusyu{
+    bottom: 215px;
+    left: 60px;
+  }
+  .okinawa{
+    bottom: 60px;
+    left: 30px;
+  }
+}
+
+@media screen and (max-width:991px){
+  div.area_map{
+    display: none;
+  }
+}
+
+// show
+.mountain_name{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.star{
+  color: rgb(255, 145, 0);
+}
+
+.show_star{
+  margin-bottom: 1rem;
+}
+
+.mountain_img{
+  width: 100%;
+  height: 710px;
+  object-fit: cover;
+}
+
+.mountain_content{
+  margin: 40px;
+}
+
+.google_map{
+  margin: 40px;
+}
+
+.map-wrap {
+  max-width: 1440px;
+  margin: 20px auto;
+  position: relative;
+  padding-top: (465 / 1440 * 100%);
+  .map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//search
 .search{
   padding: 10px 20px 0 20px;
 }
@@ -106,8 +240,4 @@ color: rgb(255, 145, 0);
 
 .mountain_name{
   font-weight: bold;
-}
-
-.search_star{
-  font-size: 20px;
 }

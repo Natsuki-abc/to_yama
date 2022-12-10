@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang='ja'>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <title><%= full_title(yield(:title)) %></title>
 
@@ -13,12 +13,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <!-- 後ほど設定 -->
-    <meta name="twitter:card" content="カード種類" /> <!--①-->
-    <meta name="twitter:site" content="@ユーザー名" /> <!--②-->
-    <meta property="og:url" content="記事のURL" /> <!--③-->
-    <meta property="og:title" content="記事のタイトル" /> <!--④-->
-    <meta property="og:description" content="記事の要約（ディスクリプション）" /> <!--⑤-->
-    <meta property="og:image" content="画像のURL" /> <!--⑥-->
+    <meta name='twitter:card' content='カード種類' /> <!--①-->
+    <meta name='twitter:site' content='@ユーザー名' /> <!--②-->
+    <meta property='og:url' content='記事のURL' /> <!--③-->
+    <meta property='og:title' content='記事のタイトル' /> <!--④-->
+    <meta property='og:description' content='記事の要約（ディスクリプション）' /> <!--⑤-->
+    <meta property='og:image' content='画像のURL' /> <!--⑥-->
 
     <%= favicon_link_tag('favicon.ico') %>
     <%= favicon_link_tag ('apple-touch-icon-180x180.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' %>
@@ -29,7 +29,7 @@
     <%= render 'layouts/header' %>
     <main>
       <% if flash.now[:notice] %>
-        <p class="notice"><%= flash.now[:notice] %></p>
+        <p class='notice'><%= flash.now[:notice] %></p>
       <% end %>
       <%= yield %>
     </main>

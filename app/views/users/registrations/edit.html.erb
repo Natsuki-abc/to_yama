@@ -1,56 +1,50 @@
 <%= content_for(:title, 'アカウント編集') %>
 
 <% if flash.now[:notice] %>
-  <p class="notice"><%= flash.now[:notice] %></p>
+  <p class='notice'><%= flash.now[:notice] %></p>
 <% end %>
 
 <div class='text-center account_edit'>
   <%= render 'users/shared/logo_link' %>
-  <div class="login container">
-    <div id="login-row" class="row justify-content-center align-items-center">
-      <div id="login-column" class="col-md-6">
-        <div id="login-box" class="col-md-12">
-          <h3 class='h3 mb-3 login-font'>アカウント編集<%= resource_name.to_s.humanize %></h3>
+  <div class='login container'>
+    <div id='login-row' class='row justify-content-center align-items-center'>
+      <div id='login-column' class='col-md-6'>
+        <div id='login-box' class='col-md-12'>
+          <h3 class='h3 mb-3 login-font'>アカウント編集</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= render "users/shared/error_messages", resource: resource %>
-            <div class=''>
+            <%= render 'users/shared/error_messages', resource: resource %>
+            <div class='mb-3'>
               <% if current_user.icon? %>
                 <%= image_tag current_user.icon.thumb.url, size: '150x150', class: 'rounded-circle', alt: 'icon' %>
               <% else %>
-                <%= link_to (image_tag 'icon.png', size: '150x150', class: 'rounded-circle'), home_index_path, class: 'd-block link-dark text-decoration-none dropdown-toggle', 'data-bs-toggle': :dropdown, 'aria-expanded': :false %>
+                <%= image_tag 'icon.png', size: '150x150', class: 'rounded-circle', alt: 'icon' %>
               <% end %>
             </div>
             <div class='mb-3'>
               <%= f.file_field :icon %>
             </div>
             <div class='mb-3'>
-              <%= f.text_field :name, :placeholder => "ユーザー名", autofocus: true, autocomplete: "name", class: 'form-control' %>
+              <%= f.text_field :name, :placeholder => 'ユーザー名', autofocus: true, autocomplete: 'name', class: 'form-control' %>
             </div>
             <div class='mb-3'>
-              <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true, autocomplete: "email", class: 'form-control' %>
+              <%= f.email_field :email, :placeholder => 'メールアドレス', autofocus: true, autocomplete: 'email', class: 'form-control' %>
             </div>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
             <% end %>        
             <div class='mb-3'>
-              <%= f.password_field :password, :placeholder => "新しいパスワード（変更する場合のみ入力）", autofocus: true, autocomplete: "new-password", class: 'form-control' %>
-            </div>
-            <% if @minimum_password_length %>
-              <br />
-              <em><%= @minimum_password_length %> characters minimum</em>
-            <% end %>
-            <div class='mb-3'>
-              <%= f.password_field :password_confirmation, :placeholder => "パスワード確認用(変更する場合のみ入力)", autofocus: true, autocomplete: "new-password", class: 'form-control' %>
+              <%= f.password_field :password, :placeholder => '新しいパスワード（変更する場合のみ入力）', autofocus: true, autocomplete: 'new-password', class: 'form-control' %>
             </div>
             <div class='mb-3'>
-              <%= f.password_field :current_password, :placeholder => "現在のパスワードを入力して下さい", autofocus: true, autocomplete: "current-password", class: 'form-control' %>
+              <%= f.password_field :password_confirmation, :placeholder => 'パスワード確認用(変更する場合のみ入力)', autofocus: true, autocomplete: 'new-password', class: 'form-control' %>
             </div>
             <div class='actions'>
-              <%= f.submit "更新", class: "w-100 btn btn-lg btn-secondary" %>
+              <%= f.submit '更新', class: 'w-100 btn btn-lg btn-secondary' %>
             </div>
           <% end %>
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-          <%= link_to "Back", :back %>
+          <%= button_to 'アカウントを削除する', registration_path(resource_name),
+          data: { confirm: 'あなたが投稿した口コミも削除されますが、本当に削除してよろしいですか?' }, method: :delete, class: 'btn btn-outline-danger comment_delete' %>
+          <%= link_to '戻る', :back, class: 'mountain_link' %>
         </div>
       </div>
     </div>

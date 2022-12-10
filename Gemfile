@@ -32,6 +32,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -71,3 +72,4 @@ gem 'ransack'
 gem 'cancancan'
 gem 'rails_admin', '~> 3.0'
 gem 'carrierwave', '~> 2.0'
+gem 'gon'

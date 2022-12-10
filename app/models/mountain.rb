@@ -11,4 +11,9 @@ class Mountain < ApplicationRecord
   validates :parking, presence: true
   validates :distance, presence: true, numericality: true
   validates :furigana, presence: true
+  validates :area, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
+
+  has_many :comments, dependent: :destroy
 end
