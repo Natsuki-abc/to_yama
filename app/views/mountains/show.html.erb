@@ -41,7 +41,8 @@
       <div class='comments'>
         <li>
           <p>タイトル：<%= comments.title %></p>
-          <p class='content'>内容：<%= comments.content %></p>
+          <p>内容：<%= comments.content %></p>
+          <p class='comment_user'>投稿者：<%= comments.user.name %></p>
         </li>
       </div>
     <% end %>
