@@ -2,9 +2,9 @@
 
 <div>
   <% if @mountain.mountain_image.present? %>
-    <%= image_tag @mountain.mountain_image.url, class: 'mountain_img' %>
+    <%= image_pack_tag @mountain.mountain_image.url, class: 'mountain_img' %>
   <% else %>
-    <%= image_tag '/assets/yama_default.jpg', class: 'mountain_img' %>
+    <%= image_pack_tag '/assets/yama_default.jpg', class: 'mountain_img' %>
   <% end %>
   
   <div class='mountain_content'>
