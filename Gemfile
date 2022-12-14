@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '2.7.6'
 
@@ -73,3 +73,9 @@ gem 'cancancan'
 gem 'rails_admin', '~> 3.0'
 gem 'carrierwave', '~> 2.0'
 gem 'gon'
+
+# to fix warning:already initialized constant Net::ProtocRetryError
+gem 'net-http'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'uri', '0.10.0'

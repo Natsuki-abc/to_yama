@@ -163,6 +163,8 @@ GEM
     msgpack (1.6.0)
     multi_json (1.15.0)
     nested_form (0.3.2)
+    net-http (0.3.1)
+      uri
     net-imap (0.3.2)
       date
       net-protocol
@@ -320,6 +322,7 @@ GEM
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
+    uri (0.10.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -360,6 +363,9 @@ DEPENDENCIES
   gon
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  net-http
+  net-imap
+  net-smtp
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -375,6 +381,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   unicorn (= 5.4.1)
+  uri (= 0.10.0)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
