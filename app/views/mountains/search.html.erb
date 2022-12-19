@@ -9,9 +9,9 @@
         <div class='search_content'>
           <div class='search_mountain1'>
             <% if results.mountain_image.present? %>
-              <%= link_to (image_pack_tag results.mountain_image_url, class: 'search_mountain_img'), results %>
+              <%= link_to (image_tag results.mountain_image_url, class: 'search_mountain_img'), results %>
             <% else %>
-              <%= link_to (image_pack_tag '/assets/yama_default.jpg', class: 'search_mountain_img'), results %>
+              <%= link_to (image_tag '/assets/yama_default.jpg', class: 'search_mountain_img'), results %>
             <% end %>
           </div>
           <div class='search_mountain'>
