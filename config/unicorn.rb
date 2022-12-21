@@ -2,7 +2,7 @@ app_path = File.expand_path('../../', __FILE__)
 
 worker_processes 2
 
-working_directory root_path
+working_directory rails_root
 
 pid "#{root_path}/tmp/pids/unicorn.pid"
 
