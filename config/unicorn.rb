@@ -2,15 +2,15 @@ app_path = File.expand_path('../../', __FILE__)
 
 worker_processes 2
 
-working_directory root_path
+working_directory "#{app_path}"
 
-pid "#{root_path}/tmp/pids/unicorn.pid"
+pid "#{app_path}/tmp/pids/unicorn.pid"
 
-listen 3000
+listen "#{app_path}/tmp/sockets/unicorn.sock"
 
-stderr_path "#{root_path}/log/unicorn.stderr.log"
+stderr_path "#{app_path}/log/unicorn.stderr.log"
 
-stdout_path "#{root_path}/log/unicorn.stdout.log"
+stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 timeout 60
 
