@@ -65,8 +65,8 @@ gem 'devise'
 gem 'devise-i18n'
 
 group :production do
-  gem 'unicorn', '5.4.1'
-  # gem 'pg' #Heroku設定
+  # gem 'unicorn', '5.4.1'
+  gem 'pg' #Heroku設定
 end
 
 gem 'ransack'
