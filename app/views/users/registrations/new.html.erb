@@ -9,7 +9,7 @@
           <h3 class='h3 mb-3 login-font'>新規登録</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.label "管理者" %>
-            <%= f.select :is_released, [['x',0],['○',1]], { include_blank: true, selected: 0 } %>
+            <%= f.select :admin, [['x',0],['○',1]], { include_blank: true, selected: 0 } %>
 
             <div class='mb-3'>
               <%= f.text_field :name, :placeholder => "ユーザー名", autofocus: true, autocomplete: "name", class: 'form-control' %>
