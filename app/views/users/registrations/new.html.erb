@@ -8,8 +8,6 @@
         <div id="login-box" class="col-md-12">
           <h3 class='h3 mb-3 login-font'>新規登録</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.number_field :admin, :placeholder => "管理者", class: 'form-control' %>
-
             <div class='mb-3'>
               <%= f.text_field :name, :placeholder => "ユーザー名", autofocus: true, autocomplete: "name", class: 'form-control' %>
             </div>
