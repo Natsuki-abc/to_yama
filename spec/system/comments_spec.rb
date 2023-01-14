@@ -101,7 +101,7 @@ RSpec.describe 'Comments', type: :system do
 
     context 'アカウントを削除した場合' do
       it 'userを削除すると、userが書いたcommentも削除されること' do
-        expect { user.destroy }.to change{ Comment.count }.by(-1)
+        expect { user.destroy }.to change { Comment.count }.by(-1)
       end
     end
   end

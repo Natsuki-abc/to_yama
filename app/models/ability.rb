@@ -8,7 +8,7 @@ class Ability
       can :access, :rails_admin
       can :manage, :all
     end
-    
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

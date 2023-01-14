@@ -18,10 +18,10 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |_exception|
     respond_to do |format|
       format.json { head :forbidden }
       format.html { redirect_to main_app.root_path, notice: '管理者権限がないためアクセスできません' }
     end
-  end  
+  end
 end

@@ -59,3 +59,9 @@ Naming/MethodParameterName:
 
 Naming/AsciiIdentifiers:
  Enabled: false
+
+GuardClause:
+  MinBodyLength: 4
+
+Lint/UnusedMethodArgument:
+  Enabled: false

@@ -35,7 +35,7 @@ class MountainsController < ApplicationController
   end
 
   def season_string
-    params[:mountain][:season] = params[:mountain][:season].join(“,”)
+    params[:mountain][:season] = params[:mountain][:season].join(“, ”)
   end
 
   def set_q

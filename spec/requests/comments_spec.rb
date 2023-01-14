@@ -25,7 +25,7 @@ RSpec.describe 'Comments', type: :request do
 
   describe 'comment#update' do
     it '口コミを編集できること' do
-      put comment_path(comment.id), params: { comment: {title: 'hoge' } }
+      put comment_path(comment.id), params: { comment: { title: 'hoge' } }
       expect(comment.reload.title).to eq 'hoge'
     end
   end
