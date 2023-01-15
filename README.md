@@ -6,9 +6,7 @@
 地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。</br>
 レスポンシブ対応しているため、スマホからもご確認いただけます。
 
-[](https://user-images.githubusercontent.com/106907064/212540888-cf3f1e77-693f-43d1-8c6a-20893627c877.mov)
-
-<img width="500" alt="TOP画面(PC)" src="https://user-images.githubusercontent.com/106907064/212525811-cca2b91b-7596-4f3a-b9f4-52bed46b1fe6.png">
+[PC Page](https://user-images.githubusercontent.com/106907064/212540888-cf3f1e77-693f-43d1-8c6a-20893627c877.mov)
 
 <img width="496" alt="mountain#search(スマホ)" src="https://user-images.githubusercontent.com/106907064/212539987-82d26c44-8bec-41ec-9ab1-09f6ad18bb23.png">
 
@@ -17,6 +15,10 @@
 [To Yama](https://morning-falls-86384.herokuapp.com/)
 
 画面右上の「ゲストログイン」ボタンより、アカウントを作成せずにログインできます。
+
+# 目次
+
+
 
 # 使用技術
 
@@ -28,13 +30,6 @@
 * Carrier Wave(開発環境)
 * Heroku
 * AWS S3(本番環境)
-
-* System dependencies
-* Configuration
-* Database creation
-* Database initialization
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
 
 # 目的
 
@@ -51,32 +46,13 @@
 
 # テスト
 
-* Rspec
+* Rspec1
+* 単体テスト(model)1-2
+* 機能テスト(request)1-3
+* 統合テスト(system)1-4
 
 # 今後追加したい機能
 
 * 山のお気に入り機能
 * 山の評価機能
 * 利用者の評価に基づいた山のランキング機能
-
-# Features
-
-"hoge"のセールスポイントや差別化などを説明する
-
-# Installation
-
-Requirementで列挙したライブラリなどのインストール方法を説明する
-
-```bash
-pip install huga_package
-```
-
-# Usage
-
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
-
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
