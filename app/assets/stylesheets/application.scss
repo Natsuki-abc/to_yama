@@ -25,16 +25,26 @@ header{
   padding-left: 20px !important;
 }
 
+@media screen and (max-width:599px){
+  .header_ul{
+    display: none;
+  }
+}
+
 main{
   padding-top: 78px;
 }
 
 @media screen and (min-width:768px) and (max-width:991px){
-  main{padding-top: 171px;}
+  main{padding-top: 163px;}
 }
 
-@media screen and (max-width:767px){
-  main{padding-top: 178px;}
+@media screen and (min-width:600px) and (max-width:767px){
+  main{padding-top: 172px;}
+}
+
+@media screen and (max-width:599px){
+  main{padding-top: 85px;}
 }
 
 li{
