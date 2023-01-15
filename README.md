@@ -1,4 +1,4 @@
-https://img.shields.io/github/commit-activity/w/Natsuki-abc/to_yama?color=red&style=for-the-badge
+![](https://img.shields.io/github/commit-activity/w/Natsuki-abc/to_yama?color=red&style=for-the-badge)
 
 # To Yama
 
