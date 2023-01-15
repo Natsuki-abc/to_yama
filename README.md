@@ -2,7 +2,7 @@
 
 # To Yama
 
-<img width="185" alt="TO_YAMA LOGO" src="https://user-images.githubusercontent.com/106907064/212525558-88348e14-1fae-4e66-96e9-f7622224d334.png">
+[TO_YAMA LOGO](https://user-images.githubusercontent.com/106907064/212525558-88348e14-1fae-4e66-96e9-f7622224d334.png)
 
 登山できる山を探すサイトです。</br>
 地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。</br>
