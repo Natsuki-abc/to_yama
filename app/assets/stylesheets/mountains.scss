@@ -241,3 +241,17 @@ div.area_map{
 .mountain_name{
   font-weight: bold;
 }
+
+@media screen and (max-width:600px){
+  .search_content{
+    display: block;
+  }
+
+  .search_mountain1 {
+    text-align: center;
+  }
+
+  .search_mountain{
+    margin-top: 20px;
+  }
+}
