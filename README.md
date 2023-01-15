@@ -3,7 +3,9 @@
 # To Yama
 
 登山できる山を探すサイトです。
+
 地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。
+
 レスポンシブ対応しているため、スマホからもご確認いただけます。
 
 # ポートフォリオURL
@@ -15,32 +17,26 @@
 # 使用技術
 
 * Ruby version 2.7.6p219
-
 * Ruby on Rails version 6.1.7
-
 * Rspec
-
 * Rubocop
-
 * Google Maps API
-
 * Carrier Wave(開発環境)
-
 * Heroku
-
 * AWS S3(本番環境)
 
 * System dependencies
-
 * Configuration
-
 * Database creation
-
 * Database initialization
-
 * Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
+
+# 目的
+
+登山に行く際にアクセスや登山ルートを調べることにとても時間がかかるため
+
+必要な情報がまとまっているサイトがあれば便利だと思い、作成しました。
 
 # 機能一覧
 
@@ -48,12 +44,17 @@
 * 山の新規追加、編集、削除機能の制限(rails_admin)
 * 山の閲覧
 * 口コミ投稿機能
-* 検索機能(ransack)
+* 山の検索機能(ransack)
 
 # テスト
 
 * Rspec
-** 
+
+# 今後追加したい機能
+
+* 山のお気に入りに登録機能
+* 山の評価機能
+* 利用者の評価に基づいた山のランキング機能
 
 # DEMO
 
