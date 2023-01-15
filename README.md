@@ -8,7 +8,7 @@
 
 # ポートフォリオURL
 
-[To Yama](https://morning-falls-86384.herokuapp.com/){:target="_blank"}
+![To Yama](https://morning-falls-86384.herokuapp.com/)
 
 画面右上の「ゲストログイン」ボタンより、アカウントを作成せずにログインできます。
 
