@@ -2,10 +2,10 @@
 
 # To Yama
 
-登山できる山を探すサイトです。
+![TO_YAMA](https://user-images.githubusercontent.com/106907064/212525472-623ba09d-d5a5-4c9c-84e7-a61524b4f229.png)
 
-地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。
-
+登山できる山を探すサイトです。</br>
+地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。</br>
 レスポンシブ対応しているため、スマホからもご確認いただけます。
 
 # ポートフォリオURL
@@ -80,24 +80,3 @@ git clone https://github.com/hoge/~
 cd examples
 python demo.py
 ```
-
-# Note
-
-注意点などがあれば書く
-
-# Author
-
-作成情報を列挙する
-
-* 作成者
-* 所属
-* E-mail
-
-# License
-ライセンスを明示する
-
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
