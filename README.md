@@ -47,9 +47,9 @@
 # テスト
 
 * Rspec
- * 単体テスト(model)
- * 機能テスト(request)
- * 統合テスト(system)
+  * 単体テスト(model)
+  * 機能テスト(request)
+  * 統合テスト(system)
 
 # 今後追加したい機能
 
