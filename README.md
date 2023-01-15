@@ -46,10 +46,10 @@
 
 # テスト
 
-* Rspec1
-* 単体テスト(model)1-2
-* 機能テスト(request)1-3
-* 統合テスト(system)1-4
+* Rspec
+  * 単体テスト(model)
+  * 機能テスト(request)
+  * 統合テスト(system)
 
 # 今後追加したい機能
 
