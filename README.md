@@ -6,7 +6,7 @@
 地域、都道府県、キーワード等での山の検索が可能です。アカウントを作成し、口コミの投稿も行えます。</br>
 レスポンシブ対応しているため、スマホからもご確認いただけます。
 
-![](https://user-images.githubusercontent.com/106907064/212540888-cf3f1e77-693f-43d1-8c6a-20893627c877.mov)
+[](https://user-images.githubusercontent.com/106907064/212540888-cf3f1e77-693f-43d1-8c6a-20893627c877.mov)
 
 <img width="500" alt="TOP画面(PC)" src="https://user-images.githubusercontent.com/106907064/212525811-cca2b91b-7596-4f3a-b9f4-52bed46b1fe6.png">
 
