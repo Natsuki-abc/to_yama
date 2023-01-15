@@ -14,7 +14,7 @@
         <%= f.label :content, '口コミ内容', class: 'col-sm-2 col-form-label required' %></br>
         <%= f.text_field :content, autofocus: true, class: 'form-control form_height comment_edit' %>
       </div>
-      <% if @comment.id == current_user.id %>
+      <% if @comment.user_id == current_user.id %>
         <%= f.submit '編集完了', class: 'w-100 btn btn-lg btn-secondary' %>
         <%= link_to '口コミを削除する', @comment, method: :delete, data:{ confirm:'本当に削除しますか？'}, class: 'btn btn-outline-danger comment_delete' %></br>
       <% end %>
