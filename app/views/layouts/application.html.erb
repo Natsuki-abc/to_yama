@@ -23,8 +23,6 @@
     <main>
       <% if flash.now[:notice] %>
         <p class='notice'><%= flash.now[:notice] %></p>
-      <% elsif flash[:notice] %>
-        <p class='notice'><%= flash[:notice] %></p>
       <% end %>
       <%= yield %>
     </main>
