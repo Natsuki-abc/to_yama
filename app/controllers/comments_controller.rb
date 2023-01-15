@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = '新規口コミを投稿しました'
     else
-      flash.now[:notice] = '口コミの投稿に失敗しました'
+      flash[:notice] = '口コミの投稿に失敗しました'
     end
     redirect_to mountain_path(@mountain)
   end
