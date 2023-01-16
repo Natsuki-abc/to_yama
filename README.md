@@ -19,7 +19,10 @@
 また、管理者ページ(rails_admin)につきましては</br>
 下記ユーザーにてログイン後、ヘッダー部分「管理者ページ」ボタンよりアクセス可能です。
 
+<img width="462" alt="管理者ページ" src="https://user-images.githubusercontent.com/106907064/212645931-8f7ac7bd-eabf-4691-a062-9a739a57cd2f.png">
+
 * 管理者ログイン情報
+
 メールアドレス:to_yama_admin@icloud.com  
 パスワード:yama1234
 
