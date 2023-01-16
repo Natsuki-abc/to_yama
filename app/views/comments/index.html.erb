@@ -2,6 +2,7 @@
 
 <div class='comment_index'>
   <h1><%= current_user.name %>さんの口コミ履歴</h1>
+  <p>合計：<%= @comments.count %>件</p>
   <% @comments.each do |comments| %>
     <div class='comment_list'>
       <li>
