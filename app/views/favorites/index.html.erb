@@ -1,0 +1,9 @@
+<%= content_for(:title, 'お気に入り一覧') %>
+
+<div class='comment_index'>
+  <h1><%= current_user.name %>さんのお気に入り一覧</h1>
+  <p>合計：<%= @favorites.count %>件</p>
+  <% @favorites.each do |favorites| %>
+    <p><%= favorites.mountain.mountain_name %><p/>
+  <% end %>
+</div>

@@ -1,0 +1,3 @@
+<%= link_to mountain_favorites_path(@mountain), id: "favorite-button-#{mountain.id}", method: :post, remote: true do %>
+  <i class='fa-regular fa-heart'></i>
+<% end %>

@@ -1,0 +1,5 @@
+<% if current_user.favorites?(mountain) %>
+  <%= render 'favorites/unfavorite', { mountain: mountain } %>
+<% else %>
+  <%= render 'favorites/favorite', { mountain: mountain } %>
+<% end %>

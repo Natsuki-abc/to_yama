@@ -8,6 +8,9 @@
   <% end %>
   
   <div class='mountain_content'>
+    <div id="registered-btn-<%= @mountain.id %>">
+      <%= render partial: 'favorites/favorite_area', locals: { mountain: @mountain } %>
+    </div>
     <p class='mountain_name'><%= @mountain.mountain_name %></p>
     <p>読み方：<%= @mountain.furigana %></p>
     <p>総歩行時間：<%= @mountain.time %></p>

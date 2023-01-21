@@ -38,4 +38,22 @@ class User < ApplicationRecord
   end
 
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_mountains, through: :favorites, source: :mountain
+
+  # お気に入り関連のインスタンスメソッド
+  # お気に入りを登録する
+  def favorite(mountain)
+    favorite_mountains << mountain
+  end
+
+  #  お気に入りを解除する
+  def unfavorite(mountain)
+    favorite_mountains.destroy(mountain)
+  end
+
+  # お気に入りしているかどうかを判定する
+  def favorites?(mountain)
+    favorites.where(mountain_id: mountain.id).exists?
+  end
 end

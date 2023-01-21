@@ -15,14 +15,13 @@ class MountainsController < ApplicationController
 
   def search
     @results = @q.result
-    if @q.address_cont.present?
-      @search_word = @q.address_cont
-    elsif @q.area_cont.present?
-      @search_word = @q.area_cont
-    else
-      @search_word =
-        @q.mountain_name_or_address_or_time_or_station_or_season_or_parking_or_area_or_furigana_cont
-    end
+    @search_word = if @q.address_cont.present?
+                     @q.address_cont
+                   elsif @q.area_cont.present?
+                     @q.area_cont
+                   else
+                     @q.mountain_name_or_address_or_time_or_station_or_season_or_parking_or_area_or_furigana_cont
+                   end
   end
 
   private
