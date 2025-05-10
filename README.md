@@ -13,6 +13,14 @@
 rails s
 ```
 
+### コンパイル
+`bundle exec rails webpacker:compile`だと、Node.js のバージョンと Webpack の設定の互換性の問題により、
+エラーになるので、下記コマンドでコンパイルする
+
+```bash
+NODE_OPTIONS=--openssl-legacy-provider bundle exec rails webpacker:compile
+```
+
 # To Yama
 
 登山できる山を探すサイトです。</br>
