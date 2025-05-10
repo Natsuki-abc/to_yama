@@ -1,5 +1,26 @@
 ![commit activity](https://img.shields.io/github/commit-activity/w/Natsuki-abc/to_yama?color=red&style=for-the-badge)
 
+# 環境構築
+
+### 前提
+
+* Rubyがインストールされていること
+* Railsがインストールされていること
+
+### 起動
+
+```bash
+rails s
+```
+
+### コンパイル
+`bundle exec rails webpacker:compile`だと、Node.js のバージョンと Webpack の設定の互換性の問題により、
+エラーになるので、下記コマンドでコンパイルする
+
+```bash
+NODE_OPTIONS=--openssl-legacy-provider bundle exec rails webpacker:compile
+```
+
 # To Yama
 
 登山できる山を探すサイトです。</br>
@@ -23,7 +44,7 @@
 
 * 管理者ログイン情報
 
-メールアドレス:to_yama_admin@icloud.com  
+メールアドレス:to_yama_admin@icloud.com
 パスワード:yama1234
 
 * 管理者の機能
